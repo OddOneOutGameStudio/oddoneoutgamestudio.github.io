@@ -455,6 +455,7 @@ ul, ol { margin: 0; padding: 0; }
   text-shadow: 3px 3px 0 var(--violet);
 }
 .project-hero .lead { max-width: 760px; }
+.project-hero__sub { display: block; margin-top: 14px; font-family: var(--font-sans); font-weight: 500; font-size: clamp(18px, 2vw, 26px); line-height: 1.2; text-transform: none; text-shadow: none; color: var(--soft); letter-spacing: 0; }
 
 .hud {
   display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 170px), 1fr));
