@@ -18,6 +18,7 @@ Needs Pillow (pip install pillow) and ffmpeg on PATH.
 
 import argparse
 import json
+import os
 import posixpath
 import re
 import shutil
@@ -477,10 +478,14 @@ class Converter:
         return {"color": "#" + self.colors.get("lt1", "FFFFFF")}
 
     def video(self, src):
-        """A URL stays as is; a local file is copied next to the deck."""
+        """A URL stays as is; a file already inside the site is referenced where it is;
+        any other local file is copied next to the deck."""
         path = Path(src)
         if "://" in src or not path.is_file():
             return src
+        site = Path.cwd().resolve()
+        if site in path.resolve().parents:
+            return Path(os.path.relpath(path.resolve(), self.out.resolve())).as_posix()
         shutil.copyfile(path, self.media_dir / path.name)
         return f"media/{path.name}"
 
@@ -570,7 +575,7 @@ class Converter:
             kept.append(e)
         slide["elements"] = kept
 
-    def convert(self, videos, fit_frame=False, remove=()):
+    def convert(self, videos, loops=frozenset(), fit_frame=False, remove=()):
         deck = {"width": self.cx, "height": self.cy, "fonts": [], "slides": []}
         for n, part in enumerate(self.slides, 1):
             root = self.pkg.xml(part)
@@ -582,6 +587,10 @@ class Converter:
             }
             if n in videos:
                 slide["video"] = self.video(videos[n])
+                if n in loops:
+                    slide["videoLoop"] = True
+                for e in slide["elements"]:  # the video covers the slide, so its old links go
+                    e.pop("link", None)
             if remove:
                 self.remove_text(slide, remove)
             if fit_frame:
@@ -609,16 +618,20 @@ def main():
                     help="put the content inside a screen frame drawn bigger than the slide and zoom in so the screen fills the slide")
     ap.add_argument("--remove-text", action="append", default=[], metavar="REGEX",
                     help="leave out every paragraph matching REGEX, e.g. names or student numbers")
+    ap.add_argument("--loop", action="append", default=[], metavar="SLIDE=SRC",
+                    help="like --video, but a muted clip that plays by itself on repeat, like a GIF")
     args = ap.parse_args()
 
-    videos = {}
-    for item in args.video:
+    videos, loops = {}, set()
+    for item in args.video + args.loop:
         n, src = item.split("=", 1)
         videos[int(n)] = src
+        if item in args.loop:
+            loops.add(int(n))
 
     args.out.mkdir(parents=True, exist_ok=True)
     Converter(Package(args.pptx), args.out, args.pptx.stat().st_mtime).convert(
-        videos, fit_frame=args.fit_frame, remove=[re.compile(r) for r in args.remove_text])
+        videos, loops, fit_frame=args.fit_frame, remove=[re.compile(r) for r in args.remove_text])
 
 
 if __name__ == "__main__":

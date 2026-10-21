@@ -1857,10 +1857,11 @@
      "w": 100.0,
      "h": 56.25,
      "src": "media/image84.jpg",
-     "kind": "img",
-     "link": "http://drive.google.com/file/d/1MaEX7AdGCHANf3sZ6OzjLqYET6DdyBcB/view"
+     "kind": "img"
     }
-   ]
+   ],
+   "video": "../../video/dreamwell-reel-loop.mp4",
+   "videoLoop": true
   },
   {
    "background": {

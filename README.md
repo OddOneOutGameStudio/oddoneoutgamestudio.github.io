@@ -124,6 +124,9 @@ python3 tools/pptx_to_deck.py prezentacja.pptx assets/decks/nazwa-gry --video 11
 python3 tools/pptx_to_deck.py prezentacja.pptx assets/decks/nazwa-gry --video 11=https://youtu.be/ID_FILMU
 ```
 
+**Pętla jak GIF** — `--loop NUMER_SLAJDU=plik`: wyciszony klip, który sam leci w kółko na całym slajdzie.
+Plik leżący już w repo (np. w `assets/video/`) jest tylko podlinkowany, a nie kopiowany.
+
 **Slajd jako ekran monitora** — `--fit-frame`: jeśli na wierzchu slajdu leży ramka większa
 niż slajd (z przezroczystym „ekranem” w środku), treść zostanie wpasowana w ekran, a całość
 przybliżona tak, że ekran wypełnia slajd i z ramki zostaje tylko wąski pasek przy krawędziach
@@ -133,7 +136,7 @@ przybliżona tak, że ekran wypełnia slajd i z ramki zostaje tylko wąski pasek
 i numery indeksów:
 
 ```bash
-python3 tools/pptx_to_deck.py ~/Downloads/2526L_Pitch_Team04.pptx assets/decks/bunker --fit-frame --remove-text '^S\d{5} ' --remove-text '^Team 04$'
+python3 tools/pptx_to_deck.py ~/Downloads/2526L_Pitch_Team04.pptx assets/decks/bunker --fit-frame --remove-text '^S\d{5} ' --remove-text '^Team 04$' --loop 11=assets/video/dreamwell-reel-loop.mp4
 ```
 
 Plik `.mp4` zostanie skopiowany obok prezentacji; link do YouTube lub Google Drive zostanie osadzony

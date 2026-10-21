@@ -139,10 +139,19 @@ function renderShape(e) {
   return node;
 }
 
-function renderSlideVideo(src, base) {
+function renderSlideVideo(src, base, loop) {
   const wrap = make("div", "deck__video");
   const embed = embedUrl(src);
-  if (embed) {
+  if (loop && !embed) {
+    // A GIF-like clip: muted, on repeat, played and paused with the slide by syncPlayback.
+    const video = make("video");
+    Object.assign(video, { muted: true, loop: true, playsInline: true, preload: "auto" });
+    video.setAttribute("muted", "");
+    video.setAttribute("aria-hidden", "true");
+    video.src = /^https?:/.test(src) ? src : base + src;
+    wrap.classList.add("deck__video--loop");
+    wrap.append(video);
+  } else if (embed) {
     const frame = make("iframe");
     frame.src = embed;
     frame.title = "Video";
@@ -167,7 +176,7 @@ function renderSlide(data, base) {
   for (const e of data.elements) {
     slide.append(e.type === "image" ? renderImage(e, base) : renderShape(e));
   }
-  if (data.video) slide.append(renderSlideVideo(data.video, base));
+  if (data.video) slide.append(renderSlideVideo(data.video, base, data.videoLoop));
   return slide;
 }
 
