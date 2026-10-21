@@ -65,6 +65,36 @@ GitHub odrzuca pliki powyżej 100 MB, a duże pliki spowalniają stronę. Dobrze
 - showreel / trailer: dłuższe filmy najlepiej na YouTube i osadzić iframe,
 - obrazy: JPG/WebP, szerokość ~1920 px dla pełnej szerokości, ~1200 px dla kafelków.
 
+## Prezentacja (pitch deck) z animowanymi GIF-ami
+
+`tools/pptx_to_deck.py` zamienia plik `.pptx` w pokaz slajdów na stronę: obrazki zostają
+dokładnie tam, gdzie były, tekst zostaje tekstem, a GIF-y dalej się ruszają (duże nagrania
+zamieniane są na MP4, duże przezroczyste GIF-y na animowane WebP, żeby strona się nie dławiła).
+
+Potrzebne: Python 3 z Pillow (`pip install pillow`) i `ffmpeg` (`brew install ffmpeg`).
+
+```bash
+python3 tools/pptx_to_deck.py ~/Downloads/prezentacja.pptx assets/decks/nazwa-gry
+```
+
+Potem na stronie projektu:
+
+```html
+<div class="deck" data-deck="../assets/decks/nazwa-gry/deck.json" aria-label="Pitch deck"></div>
+<script src="../assets/js/deck.js" defer></script>
+```
+
+**Filmik na slajdzie** — dodaj `--video NUMER_SLAJDU=plik_lub_link`, np.:
+
+```bash
+python3 tools/pptx_to_deck.py prezentacja.pptx assets/decks/nazwa-gry --video 11=~/Downloads/gameplay.mp4
+python3 tools/pptx_to_deck.py prezentacja.pptx assets/decks/nazwa-gry --video 11=https://youtu.be/ID_FILMU
+```
+
+Plik `.mp4` zostanie skopiowany obok prezentacji; link do YouTube lub Google Drive zostanie osadzony
+(plik na Drive musi być udostępniony „każdy z linkiem”). Obrazek na slajdzie, który w PowerPoincie
+linkował do filmu, bez tej opcji pokazuje przycisk ▶ otwierający link w nowej karcie.
+
 ## Nowa gra
 
 Skopiuj `projects/project-01.html` jako `projects/nazwa-gry.html`, uzupełnij treść i podlinkuj kafelek w `index.html`.
