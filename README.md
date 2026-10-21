@@ -12,6 +12,12 @@ assets/img/             obrazy (screeny, key arty, zdjęcia)
 assets/video/           filmiki (showreel, trailery, pętle gameplayu)
 ```
 
+## Cache przeglądarki
+
+GitHub Pages każe przeglądarkom trzymać pliki przez 10 minut. Po zmianie `style.css` albo plików
+w `assets/js/` podbij numer `?v=` przy ich linkach we wszystkich plikach `.html` (np. `?v=4` → `?v=5`),
+żeby odwiedzający od razu dostali nową wersję.
+
 ## Teksty
 
 Wszystko w `[NAWIASACH]` to miejsce do uzupełnienia — wystarczy wyszukać `[` w plikach `.html`.

@@ -44,8 +44,9 @@ function isVideoLink(href) {
 }
 
 function place(node, e) {
+  // maxWidth inline: pictures may be wider than the slide, whatever the page's img rules say.
   Object.assign(node.style, {
-    left: `${e.x}cqw`, top: `${e.y}cqw`, width: `${e.w}cqw`, height: `${e.h}cqw`,
+    left: `${e.x}cqw`, top: `${e.y}cqw`, width: `${e.w}cqw`, height: `${e.h}cqw`, maxWidth: "none",
   });
   const t = [];
   if (e.rot) t.push(`rotate(${e.rot}deg)`);
@@ -171,7 +172,7 @@ function renderSlide(data, base) {
 async function initDeck(root) {
   const src = root.dataset.deck;
   const base = src.slice(0, src.lastIndexOf("/") + 1);
-  const deck = await fetch(src).then((r) => r.json());
+  const deck = await fetch(src, { cache: "no-cache" }).then((r) => r.json());
   loadFonts(deck.fonts);
 
   const total = deck.slides.length;
