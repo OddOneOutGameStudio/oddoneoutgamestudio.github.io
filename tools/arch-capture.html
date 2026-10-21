@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Architecture map — capture frame</title>
+  <!-- Renders only the map stage at 1280×720 for recording the home-page loop.
+       Usage: tools/arch-capture.html?trace=build&step=3  (see tools/arch-record.sh) -->
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Grotesk:wght@400;500;700&family=VT323&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <style>
+    html, body { margin: 0; background: #0b0616; overflow: hidden; }
+    body::before, body::after { display: none; }
+    #arch { width: 1280px; }
+    .arch__bar, .arch__panel { display: none; }
+    .arch__stage { border: 0; box-shadow: none; overflow: hidden; height: 720px; }
+    .arch__stage svg { width: 1280px; min-width: 0; height: auto; }
+    .rv { opacity: 1; transform: none; }
+  </style>
+</head>
+<body>
+  <div id="arch" class="arch"></div>
+  <script>
+    const q = new URLSearchParams(location.search);
+    const a = document.getElementById("arch");
+    if (q.get("trace")) { a.dataset.trace = q.get("trace"); a.dataset.step = q.get("step") || "0"; }
+  </script>
+  <script src="../assets/js/szczury-arch.js" defer></script>
+</body>
+</html>

@@ -281,6 +281,13 @@ const ARCH = {"nodes": [{"id": "ServiceLocator", "label": "ServiceLocator", "lay
 
   renderIntro();
 
+  // Capture mode (tools/arch-capture.html): show one step of one trace, no attract animation.
+  if (root.dataset.trace) {
+    const tr = ARCH.traces.find((t) => t.id === root.dataset.trace);
+    if (tr) { state.trace = tr; showStep(tr, Math.min(tr.steps.length - 1, Number(root.dataset.step || 0))); }
+    return;
+  }
+
   // Attract mode: one slow pulse through the "build" trace until the visitor touches anything.
   if (!reduceMotion && "IntersectionObserver" in window) {
     let touched = false;
