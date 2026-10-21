@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Grotesk:wght@400;500;700&family=VT323&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../assets/css/style.css?v=19">
+  <link rel="stylesheet" href="../assets/css/style.css?v=20">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -46,12 +46,17 @@
     <section class="trailer" aria-label="Trailer">
       <div class="crt rv">
         <div class="media media--16x9">
-          <video src="../assets/video/dreamwell-showreel.mp4" poster="../assets/img/dreamwell-15.jpg" controls playsinline preload="metadata"></video>
+          <span class="media__badge media__badge--rec">Highlights</span>
+          <video class="clip" src="../assets/video/dreamwell-reel-loop.mp4" poster="../assets/img/dreamwell-reel-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="DreamWell highlights: bunker, ShimmerWoods and BlackNode"></video>
         </div>
-        <div class="crt__label"><span>Showcase reel · <b>DreamWell</b></span><span>60 s · Bunker → ShimmerWoods → BlackNode</span></div>
+        <div class="crt__label"><span>Showcase reel · <b>DreamWell</b></span><span data-reel-label>Highlights · 16 s loop</span></div>
       </div>
       <div class="btn-row rv">
-        <a class="btn btn--primary" href="#deck">Pitch deck ↓</a>
+        <button type="button" class="btn btn--primary" data-full-video="../assets/video/dreamwell-showreel.mp4" data-full-label="Full reel · 60 s · Bunker → ShimmerWoods → BlackNode">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15l13-7.5z"/></svg>
+          Watch the full reel · 60 s
+        </button>
+        <a class="btn" href="#deck">Pitch deck ↓</a>
       </div>
     </section>
 
@@ -169,7 +174,7 @@
   </footer>
 </div>
 
-<script src="../assets/js/main.js?v=19" defer></script>
-<script src="../assets/js/deck.js?v=19" defer></script>
+<script src="../assets/js/main.js?v=20" defer></script>
+<script src="../assets/js/deck.js?v=20" defer></script>
 </body>
 </html>

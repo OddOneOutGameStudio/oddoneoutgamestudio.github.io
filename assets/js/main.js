@@ -61,6 +61,25 @@ if (reduceMotion || !("IntersectionObserver" in window)) {
 }
 window.__ooo = "rv3";
 
+// Full video: a <button data-full-video="url"> next to a looping clip swaps the loop in the same
+// .trailer for the full video, with sound and controls, and starts it.
+document.querySelectorAll("[data-full-video]").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const section = btn.closest(".trailer");
+    const loop = section.querySelector("video.clip");
+    const full = document.createElement("video");
+    Object.assign(full, { src: btn.dataset.fullVideo, controls: true, playsInline: true, autoplay: true });
+    full.setAttribute("aria-label", loop.getAttribute("aria-label") || "Full video");
+    section.querySelectorAll(".media__badge").forEach((el) => el.remove());
+    loop.replaceWith(full);
+    const label = section.querySelector("[data-reel-label]");
+    if (label && btn.dataset.fullLabel) label.textContent = btn.dataset.fullLabel;
+    btn.remove();
+    full.play().catch(() => {});
+    full.focus();
+  });
+});
+
 // Click-to-play: a <button data-embed="url"> inside a .media swaps the cover for the game's iframe,
 // so a heavy browser game only loads when someone asks for it. Games with a fixed resolution
 // (data-embed-width/height, including any host chrome such as itch.io's 1 px border and 20 px footer)
