@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Grotesk:wght@400;500;700&family=VT323&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=13">
+  <link rel="stylesheet" href="assets/css/style.css?v=14">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -72,11 +72,15 @@
           <span class="kicker">01 · Work</span>
           <h2 id="work-title" class="h-section">Our games</h2>
         </div>
-        <span class="kicker">7 projects · strongest first</span>
+        <div class="filter" role="group" aria-label="Filter projects">
+          <button type="button" class="filter__btn is-active" data-filter="all" aria-pressed="true">All <span>7</span></button>
+          <button type="button" class="filter__btn" data-filter="uni" aria-pressed="false">University <span>4</span></button>
+          <button type="button" class="filter__btn" data-filter="personal" aria-pressed="false">Personal <span>3</span></button>
+        </div>
       </div>
 
       <div class="lvls">
-        <a class="lvl lvl--big rv" href="projects/dreamwell.html">
+        <a class="lvl lvl--big rv" href="projects/dreamwell.html" data-kind="uni">
           <div class="media media--16x9 media--flat">
             <span class="media__badge">Engineering thesis</span>
             <video class="clip" src="assets/video/dreamwell-loop.mp4" poster="assets/img/dreamwell-20.jpg"
@@ -84,7 +88,7 @@
           </div>
           <div class="lvl__body">
             <div class="lvl__head">
-              <span class="lvl__num">Level 01</span>
+              <span class="lvl__num">Level 01</span><span class="lvl__kind lvl__kind--uni">University</span>
               <span class="lvl__num" style="color: var(--blue)">2025 → 2026</span>
             </div>
             <h3 class="lvl__title glitch" data-text="DreamWell">DreamWell</h3>
@@ -97,13 +101,13 @@
           </div>
         </a>
 
-        <a class="lvl rv rv-d1" href="projects/pirate-cove.html">
+        <a class="lvl rv rv-d1" href="projects/pirate-cove.html" data-kind="uni">
           <div class="media media--16x9 media--flat media--pixelated">
             <video class="clip" src="assets/video/pirate-loop.mp4" poster="assets/img/pirate-6.jpg"
                    autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video>
           </div>
           <div class="lvl__body">
-            <div class="lvl__head"><span class="lvl__num">Level 02</span><span class="lvl__num" style="color: var(--blue)">6 weeks</span></div>
+            <div class="lvl__head"><span class="lvl__num">Level 02</span><span class="lvl__kind lvl__kind--uni">University</span><span class="lvl__num" style="color: var(--blue)">6 weeks</span></div>
             <h3 class="lvl__title glitch" data-text="Pirate Cove">Pirate Cove</h3>
             <p class="lvl__meta">2D platformer · Unity · 2025</p>
             <p class="lvl__desc">Our first game in Unity. Six weeks from zero to a lobby, three levels, a secret one and a save system — learning the engine, game design and level design on the job.</p>
@@ -111,14 +115,14 @@
           </div>
         </a>
 
-        <a class="lvl rv rv-d2" href="projects/szczury.html">
+        <a class="lvl rv rv-d2" href="projects/szczury.html" data-kind="uni">
           <div class="media media--16x9 media--flat">
             <span class="media__badge">Interactive map</span>
             <video class="clip" src="assets/video/szczury-arch-loop.mp4" poster="assets/img/szczury-arch.jpg"
                    autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video>
           </div>
           <div class="lvl__body">
-            <div class="lvl__head"><span class="lvl__num">Level 03</span><span class="lvl__num" style="color: var(--blue)">Unity 6</span></div>
+            <div class="lvl__head"><span class="lvl__num">Level 03</span><span class="lvl__kind lvl__kind--uni">University</span><span class="lvl__num" style="color: var(--blue)">Unity 6</span></div>
             <h3 class="lvl__title glitch" data-text="Tower Defense — code architecture">Tower Defense — code architecture</h3>
             <p class="lvl__meta">Szczury · 3D tower defense · 2026</p>
             <p class="lvl__desc">Well structured on purpose, ugly on purpose: 106 scripts and 11 design patterns, with an interactive map that shows how a single click travels through the code.</p>
@@ -126,14 +130,14 @@
           </div>
         </a>
 
-        <a class="lvl rv rv-d3" href="projects/bananas-era-shift.html">
+        <a class="lvl rv rv-d3" href="projects/bananas-era-shift.html" data-kind="uni">
           <div class="media media--16x9 media--flat">
             <span class="media__badge" style="color: var(--yellow)">2nd place</span>
             <video class="clip" src="assets/video/bananas-loop.mp4" poster="assets/img/bananas-85.jpg"
                    autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video>
           </div>
           <div class="lvl__body">
-            <div class="lvl__head"><span class="lvl__num">Level 04</span><span class="lvl__num" style="color: var(--blue)">24 h</span></div>
+            <div class="lvl__head"><span class="lvl__num">Level 04</span><span class="lvl__kind lvl__kind--uni">University</span><span class="lvl__num" style="color: var(--blue)">24 h</span></div>
             <h3 class="lvl__title glitch" data-text="Banana's Era Shift">Banana's Era Shift</h3>
             <p class="lvl__meta">Co-op platformer · Game jam · 2025</p>
             <p class="lvl__desc">2nd place at PJATK Game Jam v8. Two players, three eras of platformer history, one night, one artist to keep up with.</p>
@@ -141,14 +145,14 @@
           </div>
         </a>
 
-        <a class="lvl rv rv-d1" href="projects/frontend.html#dopamine">
+        <a class="lvl rv rv-d1" href="projects/frontend.html#dopamine" data-kind="personal">
           <div class="media media--16x9 media--flat">
             <span class="media__badge">Stake Engine</span>
             <video class="clip" src="assets/video/dopamine-loop.mp4" poster="assets/img/dopamine-6.jpg"
                    autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video>
           </div>
           <div class="lvl__body">
-            <div class="lvl__head"><span class="lvl__num">Level 05</span><span class="lvl__num" style="color: var(--blue)">Web</span></div>
+            <div class="lvl__head"><span class="lvl__num">Level 05</span><span class="lvl__kind lvl__kind--personal">Personal</span><span class="lvl__num" style="color: var(--blue)">Web</span></div>
             <h3 class="lvl__title glitch" data-text="DOPAMINE.exe">DOPAMINE.exe</h3>
             <p class="lvl__meta">Slot game · Stake Engine · Svelte + PIXI · 2026</p>
             <p class="lvl__desc">An original 5×4 slot for a real casino engine, where the interface corrupts as you win. Learning the Stake Engine math SDK and its frontend from zero, with every pixel of UI drawn by hand.</p>
@@ -156,10 +160,10 @@
           </div>
         </a>
 
-        <a class="lvl lvl--locked rv rv-d2" href="projects/frontend.html#escape">
+        <a class="lvl lvl--locked rv rv-d2" href="projects/frontend.html#escape" data-kind="personal">
           <div class="media media--16x9 media--flat media--empty" data-label="Clips incoming"></div>
           <div class="lvl__body">
-            <div class="lvl__head"><span class="lvl__num">Level 06</span><span class="lvl__num" style="color: var(--blue)">Web</span></div>
+            <div class="lvl__head"><span class="lvl__num">Level 06</span><span class="lvl__kind lvl__kind--personal">Personal</span><span class="lvl__num" style="color: var(--blue)">Web</span></div>
             <h3 class="lvl__title glitch" data-text="Halloween Escape Room">Halloween Escape Room</h3>
             <p class="lvl__meta">Puzzle · Frontend · JS</p>
             <p class="lvl__desc">A haunted room you have to think your way out of. Chained puzzles, locks and keys, and the logic that decides what unlocks what.</p>
@@ -167,13 +171,13 @@
           </div>
         </a>
 
-        <a class="lvl rv rv-d3" href="projects/cats.html">
+        <a class="lvl rv rv-d3" href="projects/cats.html" data-kind="personal">
           <div class="media media--16x9 media--flat media--pixelated">
             <span class="media__badge">Play in browser</span>
             <img src="assets/img/idle-cat-farm-cover.png" alt="" loading="lazy">
           </div>
           <div class="lvl__body">
-            <div class="lvl__head"><span class="lvl__num">Level 07</span><span class="lvl__num" style="color: var(--blue)">No engine</span></div>
+            <div class="lvl__head"><span class="lvl__num">Level 07</span><span class="lvl__kind lvl__kind--personal">Personal</span><span class="lvl__num" style="color: var(--blue)">No engine</span></div>
             <h3 class="lvl__title glitch" data-text="Idle Cat Farm">Idle Cat Farm</h3>
             <p class="lvl__meta">Idle farming sim · Java · Swing</p>
             <p class="lvl__desc">The cats do the farming: they plant, water, refill the well and nap when they're tired, finding their way with A*. No engine — the loop, camera and rendering are written by hand.</p>
@@ -289,7 +293,7 @@
   </footer>
 </div>
 
-<script src="assets/js/main.js?v=13" defer></script>
-<script src="assets/js/deck.js?v=13" defer></script>
+<script src="assets/js/main.js?v=14" defer></script>
+<script src="assets/js/deck.js?v=14" defer></script>
 </body>
 </html>

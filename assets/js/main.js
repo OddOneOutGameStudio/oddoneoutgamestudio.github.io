@@ -125,3 +125,18 @@ if (!reduceMotion && glitches.length) {
   // One burst on the hero right after load so the effect is discovered immediately.
   setTimeout(() => glitches.slice(0, 1).forEach(burst), 600);
 }
+
+// Project filter on the home page: buttons with data-filter show cards whose data-kind matches.
+const filterBtns = document.querySelectorAll(".filter__btn");
+if (filterBtns.length) {
+  const cards = document.querySelectorAll(".lvl[data-kind]");
+  const apply = (kind) => {
+    cards.forEach((c) => { c.hidden = kind !== "all" && c.dataset.kind !== kind; });
+    filterBtns.forEach((b) => { const on = b.dataset.filter === kind; b.classList.toggle("is-active", on); b.setAttribute("aria-pressed", String(on)); });
+    cards.forEach((c) => { if (!c.hidden) c.classList.add("in"); });
+    if (history.replaceState) history.replaceState(null, "", kind === "all" ? location.pathname + "#work" : location.pathname + "#work-" + kind);
+  };
+  filterBtns.forEach((b) => b.addEventListener("click", () => apply(b.dataset.filter)));
+  const m = location.hash.match(/^#work-(uni|personal)$/);
+  if (m) apply(m[1]);
+}

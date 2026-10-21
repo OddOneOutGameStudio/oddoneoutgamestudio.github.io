@@ -386,6 +386,26 @@ ul, ol { margin: 0; padding: 0; }
   font-family: var(--font-mono); font-size: 18px; color: var(--soft);
 }
 
+/* ---------- Project filter ---------- */
+
+.filter { display: flex; flex-wrap: wrap; gap: 8px; }
+.filter__btn {
+  font-family: var(--font-sans); font-weight: 600; font-size: 14px; line-height: 1; padding: 10px 14px;
+  background: var(--surface); border: 1px solid var(--line-strong); color: var(--soft); cursor: pointer;
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.filter__btn span { font-family: var(--font-mono); font-size: 17px; color: var(--muted); }
+.filter__btn:hover { border-color: var(--text); color: var(--text); }
+.filter__btn.is-active { background: var(--text); border-color: var(--text); color: var(--on-accent); }
+.filter__btn.is-active span { color: var(--on-accent); }
+.lvl[hidden] { display: none; }
+.lvl__kind {
+  font-family: var(--font-mono); font-size: 16px; line-height: 1; padding: 4px 7px; margin-left: 10px;
+  border: 1px solid var(--line-strong); color: var(--muted); vertical-align: 2px;
+}
+.lvl__kind--uni { border-color: rgba(63, 224, 255, 0.5); color: var(--blue); }
+.lvl__kind--personal { border-color: rgba(255, 61, 174, 0.5); color: var(--pink-2); }
+
 /* ---------- Players (about) ---------- */
 
 .about { display: flex; flex-wrap: wrap; gap: 32px 56px; align-items: center; }
