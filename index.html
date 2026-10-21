@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Grotesk:wght@400;500;700&family=VT323&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=14">
+  <link rel="stylesheet" href="assets/css/style.css?v=16">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -47,10 +47,16 @@
         <div class="crt">
           <div class="media media--16x9">
             <span class="media__badge media__badge--rec">Rec</span>
-            <video class="clip" src="assets/video/dreamwell-loop.mp4" poster="assets/img/dreamwell-20.jpg"
-                   autoplay muted loop playsinline preload="metadata" aria-label="DreamWell gameplay loop"></video>
+            <video class="clip" id="hero-video" src="assets/video/dreamwell-loop.mp4" poster="assets/img/dreamwell-20.jpg"
+                   autoplay muted playsinline preload="metadata" aria-label="Gameplay clips from our games"></video>
           </div>
-          <div class="crt__label"><span>Now playing: <b>DreamWell</b></span><span>Showreel · 00:12</span></div>
+          <div class="crt__label"><span>Now playing: <b data-np-title>DreamWell</b></span><span data-np-meta>Gameplay · 00:12 · 1/4</span></div>
+          <script type="application/json" id="hero-playlist">[
+            {"src": "assets/video/dreamwell-loop.mp4", "poster": "assets/img/dreamwell-20.jpg", "title": "DreamWell", "meta": "Gameplay · 00:12"},
+            {"src": "assets/video/pirate-loop.mp4", "poster": "assets/img/pirate-6.jpg", "title": "Pirate Cove", "meta": "Gameplay · 00:16"},
+            {"src": "assets/video/bananas-loop.mp4", "poster": "assets/img/bananas-85.jpg", "title": "Banana's Era Shift", "meta": "Three eras · 00:12"},
+            {"src": "assets/video/dopamine-loop.mp4", "poster": "assets/img/dopamine-6.jpg", "title": "DOPAMINE.exe", "meta": "Storybook · 00:16"}
+          ]</script>
         </div>
       </div>
     </section>
@@ -80,26 +86,24 @@
       </div>
 
       <div class="lvls">
-        <a class="lvl lvl--big rv" href="projects/dreamwell.html" data-kind="uni">
-          <div class="media media--16x9 media--flat">
-            <span class="media__badge">Engineering thesis</span>
-            <video class="clip" src="assets/video/dreamwell-loop.mp4" poster="assets/img/dreamwell-20.jpg"
-                   autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video>
+        <article class="lvl lvl--big rv" data-kind="uni">
+          <div class="lvl__deck">
+            <div class="deck" data-deck="assets/decks/bunker/deck.json" data-autoplay="4500" aria-label="DreamWell pitch deck"></div>
           </div>
           <div class="lvl__body">
             <div class="lvl__head">
-              <span class="lvl__num">Level 01</span><span class="lvl__kind lvl__kind--uni">University</span>
+              <span class="lvl__num">Level 01<span class="lvl__kind lvl__kind--uni">University</span></span>
               <span class="lvl__num" style="color: var(--blue)">2025 → 2026</span>
             </div>
-            <h3 class="lvl__title glitch" data-text="DreamWell">DreamWell</h3>
+            <h3 class="lvl__title glitch" data-text="DreamWell"><a href="projects/dreamwell.html">DreamWell</a></h3>
             <p class="lvl__meta">2D survival · Unity · C# · PC</p>
             <p class="lvl__desc">Our biggest project and our engineering thesis. A bunker survivor who can smuggle resources out of video games into the real world — three worlds, two art styles, one inventory. Design, code, UI, backend, pixel art and 3D models: all ours.</p>
             <div class="tags">
               <span class="tag tag--pink">Thesis</span><span class="tag">Unity</span><span class="tag">Pixel art</span><span class="tag">3D</span><span class="tag tag--blue">Team of 4</span>
             </div>
-            <div class="lvl__foot"><span class="mono muted">Shown at PJATK Showcase 2026</span><span class="lvl__cta">Case study →</span></div>
+            <div class="lvl__foot"><span class="mono muted">Pitch deck from PJATK Showcase 2026</span><a class="lvl__cta" href="projects/dreamwell.html">Case study →</a></div>
           </div>
-        </a>
+        </article>
 
         <a class="lvl rv rv-d1" href="projects/pirate-cove.html" data-kind="uni">
           <div class="media media--16x9 media--flat media--pixelated">
@@ -202,19 +206,7 @@
       </div>
     </section>
 
-    <section id="deck" class="section" aria-labelledby="deck-title">
-      <div class="section-head rv">
-        <div class="section-head__titles">
-          <span class="kicker">DreamWell</span>
-          <h2 id="deck-title" class="h-section">Pitch deck</h2>
-        </div>
-        <span class="kicker">Arrow keys flip slides</span>
-      </div>
-      <!-- Made with tools/pptx_to_deck.py — see README -->
-      <div class="deck rv" data-deck="assets/decks/bunker/deck.json" aria-label="DreamWell pitch deck"></div>
-    </section>
-
-    <section id="about" class="section" aria-labelledby="about-title">
+        <section id="about" class="section" aria-labelledby="about-title">
       <div class="section-head rv">
         <div class="section-head__titles">
           <span class="kicker">02 · About</span>
@@ -308,7 +300,7 @@
   </footer>
 </div>
 
-<script src="assets/js/main.js?v=14" defer></script>
-<script src="assets/js/deck.js?v=14" defer></script>
+<script src="assets/js/main.js?v=16" defer></script>
+<script src="assets/js/deck.js?v=16" defer></script>
 </body>
 </html>

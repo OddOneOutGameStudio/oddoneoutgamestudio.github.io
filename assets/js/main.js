@@ -140,3 +140,41 @@ if (filterBtns.length) {
   const m = location.hash.match(/^#work-(uni|personal)$/);
   if (m) apply(m[1]);
 }
+
+// Hero playlist: the CRT plays our clips one after another and updates "Now playing".
+const heroVideo = document.getElementById("hero-video");
+const heroList = document.getElementById("hero-playlist");
+if (heroVideo && heroList && !reduceMotion) {
+  const items = JSON.parse(heroList.textContent);
+  const title = document.querySelector("[data-np-title]");
+  const meta = document.querySelector("[data-np-meta]");
+  let idx = 0;
+  const label = () => {
+    const it = items[idx];
+    if (title) title.textContent = it.title;
+    if (meta) meta.textContent = `${it.meta} · ${idx + 1}/${items.length}`;
+  };
+  const load = (k) => {
+    idx = (k + items.length) % items.length;
+    heroVideo.classList.add("is-switching");
+    heroVideo.poster = items[idx].poster;
+    heroVideo.src = items[idx].src;
+    heroVideo.load();
+    heroVideo.play().catch(() => {});
+    heroVideo.addEventListener("playing", () => heroVideo.classList.remove("is-switching"), { once: true });
+    label();
+  };
+  heroVideo.addEventListener("ended", () => load(idx + 1));
+  // Warm the next clip's cache while the current one plays.
+  heroVideo.addEventListener("playing", () => {
+    const next = items[(idx + 1) % items.length];
+    if (!document.querySelector(`link[data-prefetch="${next.src}"]`)) {
+      const l = document.createElement("link");
+      l.rel = "prefetch"; l.as = "video"; l.href = next.src; l.dataset.prefetch = next.src;
+      document.head.append(l);
+    }
+  });
+  label();
+} else if (heroVideo) {
+  heroVideo.loop = true;
+}

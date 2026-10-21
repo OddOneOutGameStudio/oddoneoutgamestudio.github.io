@@ -199,6 +199,34 @@ async function initDeck(root) {
   let current = 0;
   let visible = false;
 
+  // Autoplay: data-autoplay="4500" advances every 4.5 s (wrapping), pauses while hovered or focused,
+  // off-screen, or when the visitor prefers reduced motion. Any manual step restarts the countdown.
+  const auto = Number(root.dataset.autoplay) || 0;
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const progress = auto ? make("div", "deck__progress") : null;
+  if (progress) { stage.append(progress); root.classList.add("deck--auto"); }
+  let timer = null;
+  let held = false;
+  function armProgress() {
+    if (!progress) return;
+    progress.style.transition = "none";
+    progress.style.width = "0%";
+    void progress.offsetWidth;
+    if (timer) { progress.style.transition = `width ${auto}ms linear`; progress.style.width = "100%"; }
+  }
+  function syncAuto() {
+    const should = auto && !reduceMotion && visible && !held;
+    if (should && !timer) { timer = setInterval(() => show((current + 1) % total), auto); armProgress(); }
+    if (!should && timer) { clearInterval(timer); timer = null; armProgress(); }
+  }
+  function restartAuto() { if (timer) { clearInterval(timer); timer = null; } syncAuto(); }
+  if (auto) {
+    root.addEventListener("pointerenter", () => { held = true; syncAuto(); });
+    root.addEventListener("pointerleave", () => { held = false; syncAuto(); });
+    root.addEventListener("focusin", () => { held = true; syncAuto(); });
+    root.addEventListener("focusout", () => { if (!root.contains(document.activeElement)) { held = false; syncAuto(); } });
+  }
+
   function ensure(i) {
     if (i < 0 || i >= total || slides[i]) return;
     slides[i] = renderSlide(deck.slides[i], base);
@@ -230,12 +258,13 @@ async function initDeck(root) {
     bar.querySelector('[data-go="-1"]').disabled = current === 0;
     bar.querySelector('[data-go="1"]').disabled = current === total - 1;
     syncPlayback();
+    if (timer) armProgress();
   }
 
   bar.addEventListener("click", (event) => {
     const btn = event.target.closest("button");
     if (!btn) return;
-    if ("go" in btn.dataset) show(current + Number(btn.dataset.go));
+    if ("go" in btn.dataset) { show(current + Number(btn.dataset.go)); restartAuto(); }
     if ("full" in btn.dataset) {
       if (document.fullscreenElement) document.exitFullscreen();
       else (root.requestFullscreen || root.webkitRequestFullscreen)?.call(root);
@@ -247,6 +276,7 @@ async function initDeck(root) {
     if (event.key in keys && !event.target.closest("iframe, video")) {
       event.preventDefault();
       show(keys[event.key]);
+      restartAuto();
     }
   });
 
@@ -256,12 +286,13 @@ async function initDeck(root) {
     if (startX === null) return;
     const dx = event.clientX - startX;
     startX = null;
-    if (Math.abs(dx) > 40) show(current + (dx < 0 ? 1 : -1));
+    if (Math.abs(dx) > 40) { show(current + (dx < 0 ? 1 : -1)); restartAuto(); }
   });
 
   new IntersectionObserver(([entry]) => {
     visible = entry.isIntersecting;
     syncPlayback();
+    syncAuto();
   }, { threshold: 0.2 }).observe(root);
 
   show(0);
