@@ -62,7 +62,9 @@ if (reduceMotion || !("IntersectionObserver" in window)) {
 window.__ooo = "rv3";
 
 // Click-to-play: a <button data-embed="url"> inside a .media swaps the cover for the game's iframe,
-// so a heavy browser game only loads when someone asks for it.
+// so a heavy browser game only loads when someone asks for it. Games with a fixed resolution
+// (data-embed-width/height, including any host chrome such as itch.io's 1 px border and 20 px footer)
+// get an iframe of exactly that size, scaled down to fit, so nothing is cut off.
 document.querySelectorAll("[data-embed]").forEach((btn) => {
   btn.addEventListener("click", () => {
     const media = btn.closest(".media");
@@ -71,6 +73,16 @@ document.querySelectorAll("[data-embed]").forEach((btn) => {
     frame.title = btn.dataset.title || "Game";
     frame.allow = "autoplay; fullscreen; gamepad; cross-origin-isolated";
     frame.allowFullscreen = true;
+    const w = Number(btn.dataset.embedWidth), h = Number(btn.dataset.embedHeight);
+    if (w && h) {
+      Object.assign(frame.style, {
+        width: `${w}px`, height: `${h}px`, maxWidth: "none", transformOrigin: "0 0",
+      });
+      media.style.aspectRatio = `${w} / ${h}`;
+      const fit = () => { frame.style.transform = `scale(${media.clientWidth / w})`; };
+      new ResizeObserver(fit).observe(media);
+      fit();
+    }
     media.querySelectorAll("img, .media__badge").forEach((el) => el.remove());
     media.append(frame);
     btn.remove();
