@@ -2,6 +2,15 @@
 
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+// Open every page at the top (or straight at its #anchor) with no scroll of its own: the browser's
+// scroll restoration would otherwise play back as a smooth scroll down on reload or back.
+// Smooth scrolling is switched on after load, for in-page links only.
+if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+if (!location.hash) window.scrollTo(0, 0);
+window.addEventListener("load", () => {
+  setTimeout(() => document.documentElement.classList.add("smooth-scroll"), 100);
+});
+
 // Footer year
 document.querySelectorAll("[data-year]").forEach((el) => {
   el.textContent = new Date().getFullYear();

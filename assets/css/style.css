@@ -35,7 +35,9 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+/* Smooth only once the page has loaded (main.js adds the class), so opening or reloading
+   a page never replays as a scroll down. */
+html.smooth-scroll { scroll-behavior: smooth; }
 
 body {
   margin: 0;
@@ -574,7 +576,7 @@ ul, ol { margin: 0; padding: 0; }
 /* ---------- Motion safety ---------- */
 
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
+  html, html.smooth-scroll { scroll-behavior: auto; }
   .rv { opacity: 1; transform: none; }
   .ticker__track, .hero__grid, .blink, .media__badge--rec::before { animation: none; }
   .glitch.is-glitching, .glitch.is-glitching::before, .glitch.is-glitching::after { animation: none; opacity: 0; }
