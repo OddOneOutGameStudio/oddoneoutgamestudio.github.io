@@ -177,6 +177,11 @@ h1, h2, h3, p { margin: 0; }
 .status { display: flex; align-items: center; gap: 10px; }
 .status::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--pink); }
 
+/* ---------- Home: featured deck ---------- */
+
+.featured-head { display: flex; flex-direction: column; gap: 10px; }
+.section-head .btn { align-self: flex-end; }
+
 /* ---------- Home: work ---------- */
 
 .feature {
