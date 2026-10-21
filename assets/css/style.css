@@ -370,10 +370,10 @@ ul, ol { margin: 0; padding: 0; }
 .lvl--big .media { flex: 1 1 520px; min-width: 0; }
 .lvl--big .lvl__body { flex: 1 1 300px; padding: 12px 10px 10px; }
 .lvl--big .lvl__deck { flex: 1 1 520px; min-width: 0; }
-.lvl__title a { color: inherit; text-decoration: none; }
-.lvl__title a:hover { color: var(--pink-2); }
-a.lvl__cta { text-decoration: none; }
-a.lvl__cta:hover { color: var(--blue); }
+.lvl__body--link { color: inherit; text-decoration: none; cursor: pointer; }
+.lvl__body--link:hover { color: inherit; }
+.lvl__body--link:hover .lvl__cta { color: var(--blue); }
+.lvl__body--link:hover .lvl__title { color: var(--pink-2); }
 .lvl__deck .deck__stage { border-color: var(--line); }
 .deck__progress { position: absolute; left: 0; top: 0; height: 3px; width: 0; background: var(--pink); z-index: 3; pointer-events: none; }
 .lvl__body { display: flex; flex-direction: column; gap: 12px; padding: 4px 6px 8px; }
