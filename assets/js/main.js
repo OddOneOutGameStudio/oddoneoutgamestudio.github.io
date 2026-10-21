@@ -2,12 +2,18 @@
 
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-// Open every page at the top (or straight at its #anchor) with no scroll of its own: the browser's
-// scroll restoration would otherwise play back as a smooth scroll down on reload or back.
+// Pages open at the top with no scroll of their own. A reload always starts at the top, even when
+// an in-page link left a #anchor in the address; only a fresh visit to a #link jumps to its section.
 // Smooth scrolling is switched on after load, for in-page links only.
+const navType = performance.getEntriesByType("navigation")[0]?.type;
+const startAtTop = navType === "reload" || !location.hash;
 if ("scrollRestoration" in history) history.scrollRestoration = "manual";
-if (!location.hash) window.scrollTo(0, 0);
+if (startAtTop) {
+  if (location.hash) history.replaceState(null, "", location.pathname + location.search);
+  window.scrollTo(0, 0);
+}
 window.addEventListener("load", () => {
+  if (startAtTop) window.scrollTo(0, 0);
   setTimeout(() => document.documentElement.classList.add("smooth-scroll"), 100);
 });
 
