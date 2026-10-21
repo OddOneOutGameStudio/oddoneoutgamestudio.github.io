@@ -446,9 +446,9 @@ ul, ol { margin: 0; padding: 0; }
 .player__glyph {
   width: 76px; height: 76px; display: grid; place-items: center;
   font-family: var(--font-pixel); font-size: 30px; color: var(--on-accent);
-  background: var(--pink); box-shadow: 5px 5px 0 var(--blue);
+  background: var(--violet); box-shadow: 5px 5px 0 var(--pink);
 }
-.player:nth-child(2) .player__glyph { background: var(--violet); box-shadow: 5px 5px 0 var(--pink); }
+.player:nth-child(2) .player__glyph { background: var(--pink); box-shadow: 5px 5px 0 var(--blue); }
 .player:nth-child(3) .player__glyph { background: var(--blue); box-shadow: 5px 5px 0 var(--violet); }
 .player__name { font-family: var(--font-sans); font-weight: 700; font-size: 26px; line-height: 1.2; }
 .player__words { display: flex; flex-wrap: wrap; gap: 8px; }
