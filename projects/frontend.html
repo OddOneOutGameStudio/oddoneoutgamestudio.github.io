@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Browser games — Odd One Out</title>
-  <meta name="description" content="Two browser games with no Unity behind them: DOPAMINE.exe, an original slot for Stake Engine where the UI corrupts as you win, and a Halloween escape room built for puzzle logic.">
+  <title>Browser games — DOPAMINE.exe &amp; Opuszczona Nałęczowska — Odd One Out</title>
+  <meta name="description" content="Two browser games with no Unity behind them: DOPAMINE.exe, an original slot for Stake Engine where the UI corrupts as you win, and Opuszczona Nałęczowska, an immersive Halloween party game for twenty guests played on phones, projectors and a TV.">
   <meta name="theme-color" content="#0a0514">
   <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Grotesk:wght@400;500;700&family=VT323&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../assets/css/style.css?v=22">
+  <link rel="stylesheet" href="../assets/css/style.css?v=23">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -31,7 +31,7 @@
     <section class="project-hero">
       <span class="kicker">Levels 05–06 · Frontend · Web</span>
       <h1><span class="glitch" data-text="Browser games">Browser games</span></h1>
-      <p class="lead">Two games that run in the browser with <strong>no Unity behind them</strong>: an original slot built on a real casino engine, and a Halloween escape room built for puzzle logic. Same toolbox at the bottom — HTML, CSS, JavaScript — very different problems on top.</p>
+      <p class="lead">Two games that run in the browser with <strong>no Unity behind them</strong>: an original slot built on a real casino engine, and an immersive Halloween party game that turns an apartment into a haunted tenement house. Same toolbox at the bottom — HTML, CSS, JavaScript — very different problems on top.</p>
     </section>
 
     <dl class="hud">
@@ -39,7 +39,7 @@
       <div><dt>Stack</dt><dd>Svelte 5 · PIXI 8 · Python · HTML/CSS/JS</dd></div>
       <div><dt>Engine</dt><dd>Stake Engine · none</dd></div>
       <div><dt>We did</dt><dd>Frontend design · math · logic · animation</dd></div>
-      <div><dt>Status</dt><dd>Playable in storybook · WIP</dd></div>
+      <div><dt>Status</dt><dd>Slot in storybook · game night 30 Oct 2026</dd></div>
     </dl>
 
     <section id="dopamine" class="section part" aria-labelledby="dopamine-title">
@@ -70,23 +70,31 @@
       </div>
     </section>
 
-    <section id="escape" class="section part" aria-labelledby="escape-title">
+    <section id="naleczowska" class="section part" aria-labelledby="naleczowska-title">
       <div class="section-head rv" style="border-top: 0; padding-top: 0">
         <div class="section-head__titles">
-          <span class="kicker">Level 06 · Escape room</span>
-          <h2 id="escape-title" class="h-section"><span class="glitch" data-text="Halloween Escape Room">Halloween Escape Room</span></h2>
+          <span class="kicker">Level 06 · Immersive party game · Halloween</span>
+          <h2 id="naleczowska-title" class="h-section"><span class="glitch" data-text="Opuszczona Nałęczowska">Opuszczona Nałęczowska</span></h2>
         </div>
-        <span class="kicker">Media coming soon</span>
+        <span class="kicker">Game night · 30 Oct 2026</span>
+      </div>
+      <div class="crt rv">
+        <div class="media media--16x10">
+          <span class="media__badge">Phone · projectors · TV</span>
+          <video class="clip" src="../assets/video/naleczowska-loop.mp4" poster="../assets/img/naleczowska.jpg" autoplay muted loop playsinline preload="metadata" aria-label="The player's phone and the TV board of Opuszczona Nałęczowska"></video>
+        </div>
+        <div class="crt__label"><span>Chapter I · <b>The ball begins</b></span><span>Everyone gets their circle</span></div>
       </div>
       <div class="grid-2">
-        <div class="crt rv">
-          <div class="media media--16x9 media--empty" data-label="Escape room · gameplay clip incoming"></div>
-          <div class="crt__label"><span>Gameplay · <b>Escape room</b></span><span>Soon</span></div>
+        <div class="prose rv">
+          <p>An original story game for <strong>about twenty people, one evening, one real apartment</strong>. Part theatre, part escape room, part detective story, part 1920s casino. Guests don't watch the plot — they play it. Each one is the ghost of a guest from a masked ball on <strong>30 October 1926</strong> that ended with the tenement house on fire. Exactly a hundred years later the Croupier comes back for the souls signed away on an IOU that night. The only way out is to name who set the fire, where and with what. The catch: the arsonist is among the players and doesn't know it.</p>
+          <p><strong>Three layers, one game.</strong> The phone is each player's private command centre — nothing to install, just a QR code from the invitation on the TV. Two projectors turn the living-room walls into the rooms of the house: cellar, ballroom, bedroom, attic, with synchronised film scenes between chapters. The TV speaks with the voice of the house, shows the game board, the case files and the IOU clock counting down two hours. <strong>Every screen and every phone is live, in the same second.</strong></p>
         </div>
         <div class="prose rv rv-d1">
-          <p>A haunted room you have to think your way out of. Click around, find clues, combine them, open the right lock with the right key — in the right order.</p>
-          <p>The interesting part is the <strong>puzzle logic</strong>: a dependency graph of what unlocks what, state that survives wrong guesses, hints that appear only when you are actually stuck, and a layout where every object is a clickable hotspot.</p>
-          <div class="tags"><span class="tag">Puzzle chains</span><span class="tag">State machine</span><span class="tag">Hotspots</span><span class="tag tag--pink">Halloween</span></div>
+          <p><strong>What players do.</strong> Circles: four teams (hearts, diamonds, clubs, spades) revealed only on your phone, so you have to find each other in the room. A race to the safe on every floor: ciphers, a portrait-wall riddle and a ghost's question that only informants from rival circles can answer. Personal missions closed with codes hidden in the flat or another player's seal. An investigation with private clues you can keep, gift, sell or trade, and a prosecution file on your phone. The Croupier's casino: one-on-one duels for gold or a shot, on a custom art-déco deck. And a phone from beyond: the cellar switchboard calls random guests.</p>
+          <p><strong>Penalties and finale.</strong> After every floor the three poorest souls go on stage: a ten-second old-cinema countdown, then karaoke with lyrics on the TV, a charleston or live dubbing of a silent film. The finale is a shared blackjack table projected on the wall — every guest picks a seat on their phone, all hands visible. If at least two circles name the arsonist, the clock stuck at 23:47 for a century starts again and the guests leave the ball. If not, the ball goes on forever.</p>
+          <p><strong>Built from scratch.</strong> Script, mechanics and art direction are original: sepia portraits of every guest as they were in 1926, generated scenes with each player's face, gilded premium cards, narrator recordings. It all runs on an ordinary laptop in the home network, and the host runs the evening from a control panel.</p>
+          <div class="tags"><span class="tag tag--pink">Live sync</span><span class="tag">QR onboarding</span><span class="tag">Host panel</span><span class="tag">Projectors + TV</span><span class="tag">Art déco</span><span class="tag tag--blue">20 players</span></div>
         </div>
       </div>
     </section>
@@ -103,6 +111,6 @@
   </footer>
 </div>
 
-<script src="../assets/js/main.js?v=22" defer></script>
+<script src="../assets/js/main.js?v=23" defer></script>
 </body>
 </html>
