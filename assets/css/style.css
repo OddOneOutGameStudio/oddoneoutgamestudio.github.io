@@ -200,8 +200,8 @@ ul, ol { margin: 0; padding: 0; }
 .logo:hover .logo__mark span:nth-child(5) { background: var(--blue); box-shadow: 0 0 10px var(--blue); }
 
 .nav { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 22px; }
-.nav a { font-family: var(--font-sans); font-weight: 500; font-size: 15px; text-decoration: none; padding: 10px 0; color: var(--soft); }
-.nav a:hover { color: var(--pink-2); }
+.nav a:not(.btn) { font-family: var(--font-sans); font-weight: 500; font-size: 15px; text-decoration: none; padding: 10px 0; color: var(--soft); }
+.nav a:not(.btn):hover { color: var(--pink-2); }
 .nav a[aria-current="page"] { color: var(--blue); }
 
 /* ---------- Buttons, tags ---------- */
