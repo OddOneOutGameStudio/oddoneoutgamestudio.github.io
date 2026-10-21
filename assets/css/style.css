@@ -39,6 +39,11 @@
    a page never replays as a scroll down. */
 html.smooth-scroll { scroll-behavior: smooth; }
 
+/* No sideways scrolling, even on phones: some decorations (the hero grid, glitch layers)
+   are wider than the screen on purpose. clip doesn't create a scroll container. */
+html, body { overflow-x: hidden; }
+@supports (overflow: clip) { html, body { overflow-x: clip; } }
+
 body {
   margin: 0;
   background: var(--bg);
