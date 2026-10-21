@@ -44,6 +44,7 @@ R_ID = f"{{{NS['r']}}}id"
 
 BIG = 300_000  # bytes; smaller media is copied as-is
 MAX_VIDEO_W = 960
+FRAME_BEZEL = 2.5  # % of slide width left of the frame on each side with --fit-frame
 DEFAULT_INSET = 91440
 DEFAULT_SIZE = 1800  # hundredths of a point
 
@@ -526,10 +527,17 @@ class Converter:
         old = (f["x"] + f["w"] * hl, f["x"] + f["w"] * hr, f["y"] + f["h"] * ht, f["y"] + f["h"] * hb)
         new = (100 * hl, 100 * hr, H * ht, H * hb)
         s = (new[1] - new[0]) / (old[1] - old[0])
+        center = ((new[0] + new[1]) / 2, (new[2] + new[3]) / 2)
         for e in els[:i]:
-            self.scale(e, s, ((old[0] + old[1]) / 2, (old[2] + old[3]) / 2), ((new[0] + new[1]) / 2, (new[2] + new[3]) / 2))
+            self.scale(e, s, ((old[0] + old[1]) / 2, (old[2] + old[3]) / 2), center)
         f.update(x=0, y=0, w=100, h=round(H, 3))
         f.pop("crop", None)
+
+        # Then zoom in on the screen so it fills the slide, leaving a thin strip of
+        # the frame at the edges, as if the slide were the monitor itself.
+        zoom = (100 - 2 * FRAME_BEZEL) / (new[1] - new[0])
+        for e in els[:i + 1]:
+            self.scale(e, zoom, center, (50, H / 2))
 
     @staticmethod
     def scale(e, s, old_center, new_center):
@@ -598,7 +606,7 @@ def main():
     ap.add_argument("--video", action="append", default=[], metavar="SLIDE=SRC",
                     help="play a video on that slide: a local .mp4 (copied next to the deck) or a YouTube / Google Drive URL")
     ap.add_argument("--fit-frame", action="store_true",
-                    help="fit a screen frame drawn bigger than the slide onto the slide and put the content inside it")
+                    help="put the content inside a screen frame drawn bigger than the slide and zoom in so the screen fills the slide")
     ap.add_argument("--remove-text", action="append", default=[], metavar="REGEX",
                     help="leave out every paragraph matching REGEX, e.g. names or student numbers")
     args = ap.parse_args()

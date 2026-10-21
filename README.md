@@ -91,15 +91,16 @@ python3 tools/pptx_to_deck.py prezentacja.pptx assets/decks/nazwa-gry --video 11
 python3 tools/pptx_to_deck.py prezentacja.pptx assets/decks/nazwa-gry --video 11=https://youtu.be/ID_FILMU
 ```
 
-**Ramka monitora na całym slajdzie** — `--fit-frame`: jeśli na wierzchu slajdu leży ramka większa
-niż slajd (z przezroczystym „ekranem” w środku), zostanie dopasowana do slajdu, a reszta treści
-zmniejszona tak, żeby zmieściła się w ekranie.
+**Slajd jako ekran monitora** — `--fit-frame`: jeśli na wierzchu slajdu leży ramka większa
+niż slajd (z przezroczystym „ekranem” w środku), treść zostanie wpasowana w ekran, a całość
+przybliżona tak, że ekran wypełnia slajd i z ramki zostaje tylko wąski pasek przy krawędziach
+(szerokość paska: `FRAME_BEZEL` w skrypcie).
 
 **Usuwanie tekstu** — `--remove-text REGEX` pomija każdy akapit pasujący do wzorca, np. imiona
 i numery indeksów:
 
 ```bash
-python3 tools/pptx_to_deck.py ~/Downloads/2526L_Pitch_Team04.pptx assets/decks/bunker --fit-frame --remove-text '^S\d{5} '
+python3 tools/pptx_to_deck.py ~/Downloads/2526L_Pitch_Team04.pptx assets/decks/bunker --fit-frame --remove-text '^S\d{5} ' --remove-text '^Team 04$'
 ```
 
 Plik `.mp4` zostanie skopiowany obok prezentacji; link do YouTube lub Google Drive zostanie osadzony

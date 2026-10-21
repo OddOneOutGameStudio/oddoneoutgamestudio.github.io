@@ -319,7 +319,7 @@ h1, h2, h3, p { margin: 0; }
 .deck__slide[hidden] { display: none; }
 .deck__slide p { margin: 0; line-height: 1.2; }
 
-.deck__el { position: absolute; display: block; }
+.deck__el { position: absolute; display: block; max-width: none; }
 .deck__media,
 .deck__fill { display: block; width: 100%; height: 100%; object-fit: fill; }
 .deck__crop { overflow: hidden; }
