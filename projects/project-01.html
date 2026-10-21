@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>[GAME TITLE] — Odd One Out</title>
+  <meta name="description" content="[GAME TITLE]: [one-line pitch].">
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<div class="wrap">
+  <header class="site-header">
+    <a class="back" href="../index.html#work">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+      All work
+    </a>
+    <a class="logo" href="../index.html" aria-label="Odd One Out — home">
+      <span class="logo__mark" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span>
+      <span class="logo__word">ODD ONE OUT</span>
+    </a>
+  </header>
+
+  <main id="main">
+    <section class="project-hero">
+      <span class="kicker">Case study · 01</span>
+      <h1>[GAME TITLE]</h1>
+      <p class="lead">[Tagline: the one-line pitch a player would repeat to a friend.]</p>
+    </section>
+
+    <dl class="facts">
+      <div><dt>Genre</dt><dd>[Puzzle platformer]</dd></div>
+      <div><dt>Team</dt><dd>[4 people]</dd></div>
+      <div><dt>Engine</dt><dd>[Unity 6 · C#]</dd></div>
+      <div><dt>Duration</dt><dd>[6 months]</dd></div>
+      <div><dt>Platform</dt><dd>[PC · Web]</dd></div>
+    </dl>
+
+    <section class="trailer" aria-label="Trailer">
+      <!-- TRAILER: replace the div below with
+           <div class="media media--16x9">
+             <video src="../assets/video/project-01-trailer.mp4" poster="../assets/img/project-01-poster.jpg"
+                    controls playsinline preload="metadata"></video>
+           </div>
+           or a YouTube iframe (see index.html for the snippet). -->
+      <div class="media media--16x9 media--empty" data-label="TRAILER · mp4 or YouTube">
+        <span class="media__play" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg>
+        </span>
+      </div>
+      <div class="btn-row">
+        <a class="btn btn--primary" href="[ITCH_URL]">Play on itch.io ↗</a>
+        <a class="btn" href="[STEAM_URL]">Steam page ↗</a>
+        <a class="btn" href="[GITHUB_URL]">Source on GitHub ↗</a>
+      </div>
+    </section>
+
+    <section class="section split" aria-labelledby="pitch-title">
+      <h2 id="pitch-title" class="h-sub">The pitch</h2>
+      <div class="prose">
+        <p>[What is the game? Core loop in two or three sentences: what the player does second to second, minute to minute, and what keeps them going.]</p>
+        <p>[Context: was it a jam game that grew, a student project, a commercial release? Who was it for and what constraint shaped it?]</p>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="built-title">
+      <div class="section-head">
+        <h2 id="built-title" class="h-sub">What we built</h2>
+        <span class="kicker">Problem → solution → result</span>
+      </div>
+      <div class="grid-auto">
+        <article class="card system">
+          <!-- <div class="media media--16x10 media--flat">
+                 <video class="clip" src="../assets/video/project-01-system-1.mp4" autoplay muted loop playsinline></video>
+               </div> -->
+          <div class="media media--16x10 media--flat media--empty" data-label="LOOPING CLIP OF THE SYSTEM"></div>
+          <div class="system__body">
+            <span class="kicker">System 01</span>
+            <h3>[Character controller]</h3>
+            <p>[What was hard, how you solved it, what changed for the player.]</p>
+          </div>
+        </article>
+        <article class="card system">
+          <div class="media media--16x10 media--flat media--empty" data-label="LOOPING CLIP OF THE SYSTEM"></div>
+          <div class="system__body">
+            <span class="kicker">System 02</span>
+            <h3>[Enemy AI / state machine]</h3>
+            <p>[What was hard, how you solved it, what changed for the player.]</p>
+          </div>
+        </article>
+        <article class="card system">
+          <div class="media media--16x10 media--flat media--empty" data-label="LOOPING CLIP OF THE TOOL"></div>
+          <div class="system__body">
+            <span class="kicker">System 03</span>
+            <h3>[Level editor tool]</h3>
+            <p>[What was hard, how you solved it, what changed for the team.]</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section split" aria-labelledby="hood-title">
+      <div style="display: flex; flex-direction: column; gap: 12px">
+        <h2 id="hood-title" class="h-sub">Under the hood</h2>
+        <p class="muted">[One system explained in depth: a short code excerpt or a diagram.]</p>
+      </div>
+      <div class="code">
+        <div class="code__file">[FileName.cs]</div>
+<pre><code>[Paste 10–20 lines of code you’re proud of here.
+Keep it readable: the reader should get the idea
+in under a minute.]</code></pre>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="gallery-title">
+      <div class="section-head">
+        <h2 id="gallery-title" class="h-sub">Gallery</h2>
+      </div>
+      <!-- Images: <div class="media media--16x9"><img src="../assets/img/project-01-shot-1.jpg" alt="Describe the shot" loading="lazy"></div> -->
+      <div class="grid-auto grid-auto--lg">
+        <div class="media media--16x9 media--empty" data-label="SCREENSHOT"></div>
+        <div class="media media--16x9 media--empty" data-label="SCREENSHOT"></div>
+        <div class="media media--16x9 media--empty" data-label="CONCEPT / PROCESS SHOT"></div>
+        <div class="media media--16x9 media--empty" data-label="EARLY PROTOTYPE vs FINAL"></div>
+      </div>
+    </section>
+
+    <section class="section split" aria-labelledby="learned-title">
+      <h2 id="learned-title" class="h-sub">What we learned</h2>
+      <ol class="lessons">
+        <li>[A technical lesson — e.g. what you’d architect differently.]</li>
+        <li>[A design lesson — something playtesting taught you.]</li>
+        <li>[A team / process lesson.]</li>
+      </ol>
+    </section>
+
+    <a class="next" href="../index.html#work">
+      <span>
+        <span class="kicker">Next project</span>
+        <span class="next__title">[NEXT GAME TITLE]</span>
+      </span>
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+  </main>
+
+  <footer class="site-footer">
+    <span>© <span data-year>2026</span> Odd One Out</span>
+    <a href="../index.html#contact">Contact</a>
+  </footer>
+</div>
+
+<script src="../assets/js/main.js" defer></script>
+</body>
+</html>
