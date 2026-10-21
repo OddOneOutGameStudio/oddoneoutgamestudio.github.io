@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Browser games — DOPAMINE.exe &amp; Opuszczona Nałęczowska — Odd One Out</title>
-  <meta name="description" content="Two browser games with no Unity behind them: DOPAMINE.exe, an original slot for Stake Engine where the UI corrupts as you win, and Opuszczona Nałęczowska, an immersive Halloween party game for twenty guests played on phones, projectors and a TV.">
+  <title>Opuszczona Nałęczowska — Odd One Out</title>
+  <meta name="description" content="Opuszczona Nałęczowska: an immersive Halloween party game for twenty guests in a real apartment — phones, two projectors and a TV, all live in the same second.">
   <meta name="theme-color" content="#0a0514">
   <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Grotesk:wght@400;500;700&family=VT323&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../assets/css/style.css?v=26">
+  <link rel="stylesheet" href="../assets/css/style.css?v=27">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -29,55 +29,22 @@
 
   <main id="main">
     <section class="project-hero">
-      <span class="kicker">Levels 05–06 · Frontend · Web</span>
-      <h1><span class="glitch" data-text="Browser games">Browser games</span></h1>
-      <p class="lead">Two games that run in the browser with <strong>no Unity behind them</strong>: an original slot built on a real casino engine, and an immersive Halloween party game that turns an apartment into a haunted tenement house. Same toolbox at the bottom — HTML, CSS, JavaScript — very different problems on top.</p>
+      <span class="kicker">Level 06 · Immersive party game · Halloween</span>
+      <h1><span class="glitch" data-text="Opuszczona Nałęczowska">Opuszczona Nałęczowska</span></h1>
+      <p class="lead">An immersive Halloween game for <strong>twenty guests, one evening, one real apartment</strong>: part theatre, part escape room, part detective story, part 1920s casino. Phones, two projectors and a TV — all live, in the same second.</p>
     </section>
 
     <dl class="hud">
-      <div><dt>Platform</dt><dd>Browser</dd></div>
-      <div><dt>Stack</dt><dd>Svelte 5 · PIXI 8 · Python · HTML/CSS/JS</dd></div>
-      <div><dt>Engine</dt><dd>Stake Engine · none</dd></div>
-      <div><dt>We did</dt><dd>Frontend design · math · logic · animation</dd></div>
-      <div><dt>Status</dt><dd>Slot in storybook · game night 30 Oct 2026</dd></div>
+      <div><dt>Genre</dt><dd>Immersive party game</dd></div>
+      <div><dt>Platform</dt><dd>Browser · phones · projectors · TV</dd></div>
+      <div><dt>Stack</dt><dd>HTML · CSS · JS · live sync</dd></div>
+      <div><dt>Players</dt><dd>About 20</dd></div>
+      <div><dt>We did</dt><dd>Script · mechanics · frontend · art direction</dd></div>
+      <div><dt>Game night</dt><dd>30 Oct 2026</dd></div>
     </dl>
 
-    <section id="dopamine" class="section part" aria-labelledby="dopamine-title">
-      <div class="section-head rv" style="border-top: 0; padding-top: 0">
-        <div class="section-head__titles">
-          <span class="kicker">Level 05 · Slot game · Stake Engine</span>
-          <h2 id="dopamine-title" class="h-section"><span class="glitch" data-text="DOPAMINE.exe">DOPAMINE.exe</span></h2>
-        </div>
-        <span class="kicker">Kinga · solo · 2026</span>
-      </div>
-      <div class="crt rv">
-        <div class="media media--16x11">
-          <span class="media__badge media__badge--rec">Rec</span>
-          <video class="clip" src="../assets/video/dopamine-loop.mp4" poster="../assets/img/dopamine-6.jpg" autoplay muted loop playsinline preload="metadata" aria-label="DOPAMINE.exe spinning in the storybook"></video>
-        </div>
-        <div class="crt__label"><span>Storybook run · <b>DOPAMINE.exe</b></span><span>Loop · 16 s</span></div>
-      </div>
-      <div class="grid-2">
-        <div class="prose rv">
-          <p>An original <strong>5×4, 20-line slot</strong> built for <a href="https://engine.io">Stake Engine</a>, the platform where independent creators publish casino games for Stake. The concept: corrupted software, a dopamine loop, degen internet culture. The <strong>interface degrades as you win</strong> — a DOPAMINE METER climbs from 0 to 100 and the machine goes from calm green to red alarms, glitches and chaos.</p>
-          <p>The scatter is a red button labelled <strong>DO NOT PRESS</strong>. The wild is <strong>WILD.exe</strong>. The bonus is <strong>DOPAMINE OVERLOAD</strong>: free spins with multiplier wilds, ×2 to ×50. A lab goblin watches from a tank next to the reels and goes through five moods from bored to manic. The spin button evolves from STIMULATE to MORE to DO IT.</p>
-        </div>
-        <div class="prose rv rv-d1">
-          <p><strong>Two SDKs, learned from zero.</strong> The math lives in the Python Math SDK: symbol strips, paytable, bonus logic, an RTP optimiser (in Rust) tuned to exactly 0.965, a 5000× win cap, and the books of pre-simulated outcomes that the engine actually serves.</p>
-          <p><strong>The frontend is the point.</strong> The Web SDK (Svelte 5 + PIXI 8) ships a generic mining theme; almost all of it was replaced with hand-built HTML overlays: the machine frame with its alarm sequence, the control bar, the bonus panels, the goblin rig with a typewriter speech bubble, and eleven symbols drawn as CSS art and rasterised with headless Chrome. The result runs end to end in the storybook, including a $5,000 win-cap book.</p>
-          <div class="tags"><span class="tag tag--pink">Stake Engine</span><span class="tag">Svelte 5</span><span class="tag">PIXI 8</span><span class="tag">Python math SDK</span><span class="tag">RTP 0.965</span><span class="tag tag--blue">CSS art</span></div>
-        </div>
-      </div>
-    </section>
+    <section class="section" aria-label="Opuszczona Nałęczowska">
 
-    <section id="naleczowska" class="section part" aria-labelledby="naleczowska-title">
-      <div class="section-head rv" style="border-top: 0; padding-top: 0">
-        <div class="section-head__titles">
-          <span class="kicker">Level 06 · Immersive party game · Halloween</span>
-          <h2 id="naleczowska-title" class="h-section"><span class="glitch" data-text="Opuszczona Nałęczowska">Opuszczona Nałęczowska</span></h2>
-        </div>
-        <span class="kicker">Game night · 30 Oct 2026</span>
-      </div>
       <div class="crt rv">
         <div class="media media--16x10">
           <span class="media__badge">Phone · projectors · TV</span>
@@ -86,7 +53,7 @@
         <div class="crt__label"><span>Chapter I · <b>The ball begins</b></span><span>Everyone gets their circle</span></div>
       </div>
       <div class="prose rv" style="max-width: 820px">
-        <p>An original story game for <strong>twenty guests, one evening, one real apartment</strong> — part theatre, part escape room, part detective story, part 1920s casino. Everyone is the ghost of a guest from a masked ball on <strong>30 October 1926</strong> that ended with the house on fire. A hundred years later the Croupier is back for the souls on that night’s IOU, and the only way out is to name who set the fire. The arsonist is among the players — and doesn’t know it.</p>
+        <p>Everyone is the ghost of a guest from a masked ball on <strong>30 October 1926</strong> that ended with the house on fire. A hundred years later the Croupier is back for the souls on that night’s IOU, and the only way out is to name who set the fire. The arsonist is among the players — and doesn’t know it.</p>
       </div>
 
       <div class="grid-auto">
@@ -128,6 +95,6 @@
   </footer>
 </div>
 
-<script src="../assets/js/main.js?v=26" defer></script>
+<script src="../assets/js/main.js?v=27" defer></script>
 </body>
 </html>
