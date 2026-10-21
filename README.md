@@ -91,6 +91,17 @@ python3 tools/pptx_to_deck.py prezentacja.pptx assets/decks/nazwa-gry --video 11
 python3 tools/pptx_to_deck.py prezentacja.pptx assets/decks/nazwa-gry --video 11=https://youtu.be/ID_FILMU
 ```
 
+**Ramka monitora na całym slajdzie** — `--fit-frame`: jeśli na wierzchu slajdu leży ramka większa
+niż slajd (z przezroczystym „ekranem” w środku), zostanie dopasowana do slajdu, a reszta treści
+zmniejszona tak, żeby zmieściła się w ekranie.
+
+**Usuwanie tekstu** — `--remove-text REGEX` pomija każdy akapit pasujący do wzorca, np. imiona
+i numery indeksów:
+
+```bash
+python3 tools/pptx_to_deck.py ~/Downloads/2526L_Pitch_Team04.pptx assets/decks/bunker --fit-frame --remove-text '^S\d{5} '
+```
+
 Plik `.mp4` zostanie skopiowany obok prezentacji; link do YouTube lub Google Drive zostanie osadzony
 (plik na Drive musi być udostępniony „każdy z linkiem”). Obrazek na slajdzie, który w PowerPoincie
 linkował do filmu, bez tej opcji pokazuje przycisk ▶ otwierający link w nowej karcie.

@@ -11,6 +11,7 @@ stays real text, and animated GIFs keep moving:
 Usage:
   python3 tools/pptx_to_deck.py deck.pptx assets/decks/<slug>
   python3 tools/pptx_to_deck.py deck.pptx assets/decks/<slug> --video 11=assets/video/demo.mp4
+  python3 tools/pptx_to_deck.py deck.pptx assets/decks/<slug> --fit-frame --remove-text '^S\d{5} '
 
 Needs Pillow (pip install pillow) and ffmpeg on PATH.
 """
@@ -18,6 +19,7 @@ Needs Pillow (pip install pillow) and ffmpeg on PATH.
 import argparse
 import json
 import posixpath
+import re
 import shutil
 import subprocess
 import sys
@@ -481,7 +483,86 @@ class Converter:
         shutil.copyfile(path, self.media_dir / path.name)
         return f"media/{path.name}"
 
-    def convert(self, videos):
+    # ---------- post-processing ----------
+
+    def hole(self, src):
+        """The transparent window in the middle of a frame image, as fractions ((l, r), (t, b))."""
+        with Image.open(self.out / src) as im:
+            alpha = im.convert("RGBA").getchannel("A")
+            w, h = im.size
+            row = [alpha.getpixel((x, h // 2)) for x in range(w)]
+            col = [alpha.getpixel((w // 2, y)) for y in range(h)]
+
+        def span(values):
+            mid = len(values) // 2
+            if values[mid] >= 20:
+                return None
+            lo = hi = mid
+            while lo > 0 and values[lo - 1] < 20:
+                lo -= 1
+            while hi < len(values) - 1 and values[hi + 1] < 20:
+                hi += 1
+            return lo / len(values), (hi + 1) / len(values)
+
+        across, down = span(row), span(col)
+        return (across, down) if across and down else None
+
+    def fit_frame(self, slide):
+        """Fit a screen frame drawn bigger than the slide (the topmost picture, with a
+        transparent window) exactly onto the slide, and scale everything under it into the window."""
+        H = self.cy * 100 / self.cx
+        els = slide["elements"]
+        i = next((n for n in range(len(els) - 1, -1, -1) if els[n]["type"] == "image"), None)
+        if i is None:
+            return
+        f = els[i]
+        bleeds = f["x"] <= 0 and f["y"] <= 0 and f["x"] + f["w"] >= 100 and f["y"] + f["h"] >= H
+        if not bleeds or f.get("rot") or f.get("kind") != "img":
+            return
+        hole = self.hole(f["src"])
+        if not hole:
+            return
+        (hl, hr), (ht, hb) = hole
+        old = (f["x"] + f["w"] * hl, f["x"] + f["w"] * hr, f["y"] + f["h"] * ht, f["y"] + f["h"] * hb)
+        new = (100 * hl, 100 * hr, H * ht, H * hb)
+        s = (new[1] - new[0]) / (old[1] - old[0])
+        for e in els[:i]:
+            self.scale(e, s, ((old[0] + old[1]) / 2, (old[2] + old[3]) / 2), ((new[0] + new[1]) / 2, (new[2] + new[3]) / 2))
+        f.update(x=0, y=0, w=100, h=round(H, 3))
+        f.pop("crop", None)
+
+    @staticmethod
+    def scale(e, s, old_center, new_center):
+        e["x"] = round(new_center[0] + (e["x"] - old_center[0]) * s, 3)
+        e["y"] = round(new_center[1] + (e["y"] - old_center[1]) * s, 3)
+        e["w"], e["h"] = round(e["w"] * s, 3), round(e["h"] * s, 3)
+        if "strokeW" in e:
+            e["strokeW"] = round(e["strokeW"] * s, 3)
+        if "inset" in e:
+            e["inset"] = [round(v * s, 3) for v in e["inset"]]
+        for para in e.get("text", []):
+            for key in ("marL", "indent", "before", "after"):
+                if key in para:
+                    para[key] = round(para[key] * s, 3)
+            for run in para["runs"]:
+                run["size"] = round(run["size"] * s, 3)
+
+    @staticmethod
+    def remove_text(slide, patterns):
+        """Drop paragraphs matching any pattern, and text boxes left empty."""
+        kept = []
+        for e in slide["elements"]:
+            if "text" in e:
+                e["text"] = [p for p in e["text"]
+                             if not any(rx.search("".join(r["text"] for r in p["runs"])) for rx in patterns)]
+                if not any(r["text"].strip() for p in e["text"] for r in p["runs"]):
+                    del e["text"]
+                    if not e.get("fill") and not e.get("stroke"):
+                        continue
+            kept.append(e)
+        slide["elements"] = kept
+
+    def convert(self, videos, fit_frame=False, remove=()):
         deck = {"width": self.cx, "height": self.cy, "fonts": [], "slides": []}
         for n, part in enumerate(self.slides, 1):
             root = self.pkg.xml(part)
@@ -493,6 +574,10 @@ class Converter:
             }
             if n in videos:
                 slide["video"] = self.video(videos[n])
+            if remove:
+                self.remove_text(slide, remove)
+            if fit_frame:
+                self.fit_frame(slide)
             deck["slides"].append(slide)
         deck["fonts"] = sorted(self.fonts)
         used = {m["src"] for m in self.media_cache.values()} | {s["video"] for s in deck["slides"] if "video" in s}
@@ -512,6 +597,10 @@ def main():
     ap.add_argument("out", type=Path, help="output folder, e.g. assets/decks/my-game")
     ap.add_argument("--video", action="append", default=[], metavar="SLIDE=SRC",
                     help="play a video on that slide: a local .mp4 (copied next to the deck) or a YouTube / Google Drive URL")
+    ap.add_argument("--fit-frame", action="store_true",
+                    help="fit a screen frame drawn bigger than the slide onto the slide and put the content inside it")
+    ap.add_argument("--remove-text", action="append", default=[], metavar="REGEX",
+                    help="leave out every paragraph matching REGEX, e.g. names or student numbers")
     args = ap.parse_args()
 
     videos = {}
@@ -520,7 +609,8 @@ def main():
         videos[int(n)] = src
 
     args.out.mkdir(parents=True, exist_ok=True)
-    Converter(Package(args.pptx), args.out, args.pptx.stat().st_mtime).convert(videos)
+    Converter(Package(args.pptx), args.out, args.pptx.stat().st_mtime).convert(
+        videos, fit_frame=args.fit_frame, remove=[re.compile(r) for r in args.remove_text])
 
 
 if __name__ == "__main__":
