@@ -4,12 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Odd One Out — Game Studio</title>
-  <meta name="description" content="Odd One Out is an independent game studio. [One line about the games you make.]">
+  <meta name="description" content="Odd One Out is a three-person game studio from Warsaw. DreamWell, Pirate Cove, Szczury, Banana's Era Shift and more — Unity, Roblox and browser games, all built as a team.">
+  <meta name="theme-color" content="#0a0514">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=4">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Grotesk:wght@400;500;700&family=VT323&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css?v=5">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -22,189 +23,265 @@
     </a>
     <nav class="nav" aria-label="Main">
       <a href="#work">Work</a>
-      <a href="#jams">Jams</a>
-      <a href="studio.html">Studio</a>
+      <a href="#about">About</a>
       <a href="#contact">Contact</a>
-      <a class="btn btn--small" href="[PRESSKIT_URL]">Press kit</a>
+      <a class="btn btn--small" href="https://github.com/OddOneOutGameStudio">GitHub ↗</a>
     </nav>
   </header>
 
   <main id="main">
     <section class="hero">
+      <div class="hero__grid" aria-hidden="true"></div>
       <div class="hero__text">
-        <p class="kicker status">[Indie game studio] · [City]</p>
-        <h1 class="h-display">We build games that feel good in your hands.</h1>
-        <p class="lead">[One or two sentences: what kind of games Odd One Out makes, for whom, and what makes them odd.]</p>
+        <p class="kicker kicker--pink">● Indie game studio · Warsaw</p>
+        <h1 class="h-display"><span class="glitch" data-text="ODD ONE">ODD ONE</span><br><span class="glitch" data-text="OUT">OUT</span></h1>
+        <p class="lead">Three friends who met at uni and never stopped shipping games together. <strong>Unity, Roblox, the browser</strong> — and once, no engine at all. We draw our own pixels, model our own props and write the code that holds it together.</p>
         <div class="btn-row">
-          <a class="btn btn--primary" href="#work">See our games
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+          <a class="btn btn--primary" href="#work">Select a game
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
           </a>
-          <a class="btn" href="[ITCH_URL]">Play on itch.io
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg>
-          </a>
+          <a class="btn" href="#about">Meet the team</a>
         </div>
       </div>
       <div class="hero__media">
-        <!-- SHOWREEL
-             When the video is ready, replace this whole div with:
-             <div class="media media--16x9">
-               <video src="assets/video/showreel.mp4" poster="assets/img/showreel-poster.jpg"
-                      controls playsinline preload="metadata"></video>
-             </div>
-             or a YouTube embed:
-             <div class="media media--16x9">
-               <iframe src="https://www.youtube-nocookie.com/embed/VIDEO_ID" title="Odd One Out showreel"
-                       allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-             </div> -->
-        <div class="media media--16x9 media--empty" data-label="SHOWREEL · 60–90 s">
-          <span class="media__play" aria-hidden="true">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg>
-          </span>
+        <div class="crt">
+          <div class="media media--16x9">
+            <span class="media__badge media__badge--rec">Rec</span>
+            <video class="clip" src="assets/video/dreamwell-loop.mp4" poster="assets/img/dreamwell-20.jpg"
+                   autoplay muted loop playsinline preload="metadata" aria-label="DreamWell gameplay loop"></video>
+          </div>
+          <div class="crt__label"><span>Now playing: <b>DreamWell</b></span><span>Showreel · 00:12</span></div>
         </div>
       </div>
     </section>
+  </main>
+</div>
 
-    <section id="featured" class="section" aria-labelledby="featured-title">
-      <div class="section-head">
-        <div class="featured-head">
-          <span class="kicker status">Featured project</span>
-          <h2 id="featured-title" class="h-section">DreamWell</h2>
+<div class="ticker" aria-hidden="true">
+  <div class="ticker__track">
+    <span class="ticker__item"><span>DreamWell</span><i>★</i><span>Pirate Cove</span><i>★</i><span>Szczury</span><i>★</i><span>Banana's Era Shift</span><i>★</i><span>Sloth</span><i>★</i><span>Halloween Escape Room</span><i>★</i><span>Julia's Cats</span><i>★</i><span>Insert coin</span><i>★</i></span>
+    <span class="ticker__item"><span>DreamWell</span><i>★</i><span>Pirate Cove</span><i>★</i><span>Szczury</span><i>★</i><span>Banana's Era Shift</span><i>★</i><span>Sloth</span><i>★</i><span>Halloween Escape Room</span><i>★</i><span>Julia's Cats</span><i>★</i><span>Insert coin</span><i>★</i></span>
+  </div>
+</div>
+
+<div class="wrap">
+  <main>
+    <section id="work" class="section" style="padding-top: clamp(56px, 7vw, 96px)" aria-labelledby="work-title">
+      <div class="section-head rv">
+        <div class="section-head__titles">
+          <span class="kicker">01 · Work</span>
+          <h2 id="work-title" class="h-section">Our games</h2>
         </div>
-        <a class="btn" href="projects/project-01.html">Case study
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </a>
-      </div>
-      <div class="deck" data-deck="assets/decks/bunker/deck.json" aria-label="DreamWell pitch deck"></div>
-    </section>
-
-    <section id="work" class="section" aria-labelledby="work-title">
-      <div class="section-head">
-        <h2 id="work-title" class="h-section">Selected work</h2>
-        <span class="kicker">04 projects</span>
+        <span class="kicker">7 projects · strongest first</span>
       </div>
 
-      <div class="grid-auto">
-        <a class="feature" href="projects/project-01.html">
-          <!-- Looping gameplay clip instead of a GIF:
-               <div class="media media--16x9 media--flat">
-                 <video class="clip" src="assets/video/project-01-loop.mp4" poster="assets/img/project-01.jpg"
-                        autoplay muted loop playsinline preload="metadata"></video>
-               </div> -->
-          <div class="media media--16x9 media--flat media--empty" data-label="KEY ART / GAMEPLAY LOOP · 16:9"></div>
-          <div class="feature__body">
-            <span class="kicker">Featured · 01</span>
-            <h3 class="feature__title">DreamWell</h3>
-            <p class="soft">[One-sentence hook: what the player does and why it's fun.]</p>
+      <div class="lvls">
+        <a class="lvl lvl--big rv" href="projects/dreamwell.html">
+          <div class="media media--16x9 media--flat">
+            <span class="media__badge">Engineering thesis</span>
+            <video class="clip" src="assets/video/dreamwell-loop.mp4" poster="assets/img/dreamwell-20.jpg"
+                   autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video>
+          </div>
+          <div class="lvl__body">
+            <div class="lvl__head">
+              <span class="lvl__num">Level 01</span>
+              <span class="lvl__num" style="color: var(--blue)">2025 → 2026</span>
+            </div>
+            <h3 class="lvl__title glitch" data-text="DreamWell">DreamWell</h3>
+            <p class="lvl__meta">2D survival · Unity · C# · PC</p>
+            <p class="lvl__desc">Our biggest project and our engineering thesis. A bunker survivor who can smuggle resources out of video games into the real world — three worlds, two art styles, one inventory. Design, code, UI, backend, pixel art and 3D models: all ours.</p>
             <div class="tags">
-              <span class="tag">[GENRE]</span>
-              <span class="tag">[ENGINE]</span>
-              <span class="tag">[YEAR]</span>
+              <span class="tag tag--pink">Thesis</span><span class="tag">Unity</span><span class="tag">Pixel art</span><span class="tag">3D</span><span class="tag tag--blue">Team of 4</span>
             </div>
-            <div class="feature__foot">
-              <span class="muted">[Status: released / in development]</span>
-              <span>Case study →</span>
-            </div>
+            <div class="lvl__foot"><span class="mono muted">Shown at PJATK Showcase 2026</span><span class="lvl__cta">Case study →</span></div>
           </div>
         </a>
 
-        <a class="tile" href="projects/project-01.html">
-          <div class="media media--4x3 media--empty" data-label="SCREENSHOT · 4:3"></div>
-          <div class="tile__head">
-            <h3 class="tile__title">[GAME TITLE]</h3>
-            <span class="mono muted">02</span>
+        <a class="lvl rv rv-d1" href="projects/pirate-cove.html">
+          <div class="media media--16x9 media--flat media--pixelated">
+            <video class="clip" src="assets/video/pirate-loop.mp4" poster="assets/img/pirate-6.jpg"
+                   autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video>
           </div>
-          <p>[Genre] · [Engine] · [Year] — [Platform]</p>
+          <div class="lvl__body">
+            <div class="lvl__head"><span class="lvl__num">Level 02</span><span class="lvl__num" style="color: var(--blue)">6 weeks</span></div>
+            <h3 class="lvl__title glitch" data-text="Pirate Cove">Pirate Cove</h3>
+            <p class="lvl__meta">2D platformer · Unity · 2025</p>
+            <p class="lvl__desc">Our first game in Unity. Six weeks from zero to a lobby, three levels, a secret one and a save system — learning the engine, game design and level design on the job.</p>
+            <div class="lvl__foot"><span class="mono muted">Team of 4</span><span class="lvl__cta">Case study →</span></div>
+          </div>
         </a>
 
-        <a class="tile" href="projects/project-01.html">
-          <div class="media media--4x3 media--empty" data-label="SCREENSHOT · 4:3"></div>
-          <div class="tile__head">
-            <h3 class="tile__title">[GAME TITLE]</h3>
-            <span class="mono muted">03</span>
+        <a class="lvl rv rv-d2" href="projects/szczury.html">
+          <div class="media media--16x9 media--flat">
+            <video class="clip" src="assets/video/szczury-loop.mp4" poster="assets/img/szczury-80.jpg"
+                   autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video>
           </div>
-          <p>[Genre] · [Engine] · [Year] — [Platform]</p>
+          <div class="lvl__body">
+            <div class="lvl__head"><span class="lvl__num">Level 03</span><span class="lvl__num" style="color: var(--blue)">Unity 6</span></div>
+            <h3 class="lvl__title glitch" data-text="Szczury">Szczury</h3>
+            <p class="lvl__meta">3D tower defense · Unity 6 · 2026</p>
+            <p class="lvl__desc">Rats vs towers. Our first 3D game, built on purpose around named design patterns, with every sound effect recorded by us.</p>
+            <div class="lvl__foot"><span class="mono muted">Team of 4</span><span class="lvl__cta">Case study →</span></div>
+          </div>
         </a>
 
-        <a class="tile" href="projects/project-01.html">
-          <div class="media media--4x3 media--empty" data-label="SCREENSHOT · 4:3"></div>
-          <div class="tile__head">
-            <h3 class="tile__title">[TOOL / PROTOTYPE]</h3>
-            <span class="mono muted">04</span>
+        <a class="lvl rv rv-d3" href="projects/bananas-era-shift.html">
+          <div class="media media--16x9 media--flat">
+            <span class="media__badge" style="color: var(--yellow)">2nd place</span>
+            <video class="clip" src="assets/video/bananas-loop.mp4" poster="assets/img/bananas-85.jpg"
+                   autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video>
           </div>
-          <p>[Editor tool / shader / prototype] · [Engine] · [Year]</p>
+          <div class="lvl__body">
+            <div class="lvl__head"><span class="lvl__num">Level 04</span><span class="lvl__num" style="color: var(--blue)">24 h</span></div>
+            <h3 class="lvl__title glitch" data-text="Banana's Era Shift">Banana's Era Shift</h3>
+            <p class="lvl__meta">Co-op platformer · Game jam · 2025</p>
+            <p class="lvl__desc">2nd place at PJATK Game Jam v8. Two players, three eras of platformer history, one night, one artist to keep up with.</p>
+            <div class="lvl__foot"><span class="mono muted">Theme: Nostalgia Trip</span><span class="lvl__cta">Case study →</span></div>
+          </div>
+        </a>
+
+        <a class="lvl lvl--locked rv rv-d1" href="projects/frontend.html#sloth">
+          <div class="media media--16x9 media--flat media--empty" data-label="Clips incoming"></div>
+          <div class="lvl__body">
+            <div class="lvl__head"><span class="lvl__num">Level 05</span><span class="lvl__num" style="color: var(--blue)">Web</span></div>
+            <h3 class="lvl__title glitch" data-text="Sloth">Sloth</h3>
+            <p class="lvl__meta">Slot game · Frontend · JS</p>
+            <p class="lvl__desc">A slot machine for the browser: reels, paylines and win animations tuned for juice. No engine, just the DOM and a lot of timing.</p>
+            <div class="lvl__foot"><span class="mono muted">Frontend design</span><span class="lvl__cta">Read more →</span></div>
+          </div>
+        </a>
+
+        <a class="lvl lvl--locked rv rv-d2" href="projects/frontend.html#escape">
+          <div class="media media--16x9 media--flat media--empty" data-label="Clips incoming"></div>
+          <div class="lvl__body">
+            <div class="lvl__head"><span class="lvl__num">Level 06</span><span class="lvl__num" style="color: var(--blue)">Web</span></div>
+            <h3 class="lvl__title glitch" data-text="Halloween Escape Room">Halloween Escape Room</h3>
+            <p class="lvl__meta">Puzzle · Frontend · JS</p>
+            <p class="lvl__desc">A haunted room you have to think your way out of. Chained puzzles, locks and keys, and the logic that decides what unlocks what.</p>
+            <div class="lvl__foot"><span class="mono muted">Frontend design</span><span class="lvl__cta">Read more →</span></div>
+          </div>
+        </a>
+
+        <a class="lvl lvl--locked rv rv-d3" href="projects/cats.html">
+          <div class="media media--16x9 media--flat media--empty" data-label="Clips incoming"></div>
+          <div class="lvl__body">
+            <div class="lvl__head"><span class="lvl__num">Level 07</span><span class="lvl__num" style="color: var(--blue)">No engine</span></div>
+            <h3 class="lvl__title glitch" data-text="Julia's Cats">Julia's Cats</h3>
+            <p class="lvl__meta">From scratch · Julia</p>
+            <p class="lvl__desc">A game with no engine at all. Game loop, rendering and input written by hand — proof we can build the machine, not just drive it.</p>
+            <div class="lvl__foot"><span class="mono muted">Solo project</span><span class="lvl__cta">Read more →</span></div>
+          </div>
         </a>
       </div>
     </section>
 
-    <section id="jams" class="section" aria-labelledby="jams-title">
-      <div class="section-head">
-        <h2 id="jams-title" class="h-section">Jams &amp; prototypes</h2>
-        <span class="kicker">Small, fast, weird</span>
+    <section id="deck" class="section" aria-labelledby="deck-title">
+      <div class="section-head rv">
+        <div class="section-head__titles">
+          <span class="kicker">DreamWell</span>
+          <h2 id="deck-title" class="h-section">Pitch deck</h2>
+        </div>
+        <span class="kicker">Arrow keys flip slides</span>
       </div>
-      <div class="rows">
-        <a class="row" href="[JAM_GAME_URL]">
-          <span class="row__title">[JAM GAME TITLE]</span>
-          <span class="muted">[Jam name] · theme “[Theme]”</span>
-          <span class="row__meta">[48 h] · [team of 3]</span>
-          <span class="row__cta">[#RANK / ENTRIES] ↗</span>
-        </a>
-        <a class="row" href="[JAM_GAME_URL]">
-          <span class="row__title">[JAM GAME TITLE]</span>
-          <span class="muted">[Jam name] · theme “[Theme]”</span>
-          <span class="row__meta">[72 h] · [team of 2]</span>
-          <span class="row__cta">[#RANK / ENTRIES] ↗</span>
-        </a>
-        <a class="row" href="[PROTOTYPE_URL]">
-          <span class="row__title">[PROTOTYPE TITLE]</span>
-          <span class="muted">[What mechanic it tests]</span>
-          <span class="row__meta">[1 week]</span>
-          <span class="row__cta">Play in browser ↗</span>
-        </a>
+      <!-- Made with tools/pptx_to_deck.py — see README -->
+      <div class="deck rv" data-deck="assets/decks/bunker/deck.json" aria-label="DreamWell pitch deck"></div>
+    </section>
+
+    <section id="about" class="section" aria-labelledby="about-title">
+      <div class="section-head rv">
+        <div class="section-head__titles">
+          <span class="kicker">02 · About</span>
+          <h2 id="about-title" class="h-section">The team</h2>
+        </div>
+        <span class="kicker">3 people</span>
+      </div>
+
+      <div class="about">
+        <div class="about__media rv">
+          <div class="media media--1x1 px">
+            <img src="assets/img/team-avatar.jpg" alt="Three Roblox-style avatars of the Odd One Out team in pink and purple" loading="lazy">
+          </div>
+        </div>
+        <div class="about__text rv rv-d1">
+          <p class="lead">Odd One Out is <strong>Kinga, Julia and Gabi</strong> — three friends who met studying game development at PJATK in Warsaw and kept making games together long after the deadlines ran out.</p>
+          <p class="soft">We have shipped a 2D platformer in six weeks, a tower defense in 3D, a jam game in one night, a Roblox game with real players, and a thesis that ate a year. Everything on this page was built as a team: we design, code, draw and model it ourselves.</p>
+          <div class="btn-row">
+            <a class="btn" href="https://github.com/OddOneOutGameStudio">GitHub ↗</a>
+            <a class="btn btn--ghost" href="#contact">Say hi</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="players">
+        <article class="player rv">
+          <div class="player__slot"><span>P1</span><i>Ready</i></div>
+          <div class="player__glyph" aria-hidden="true">K</div>
+          <h3 class="player__name">Kinga</h3>
+          <div class="player__words"><span>Code</span><span>Systems</span><span>UI</span></div>
+          <p class="player__bio">Gameplay systems, interfaces and level design. Writes the code that holds the game together and the HUD that tells you it's working.</p>
+        </article>
+        <article class="player rv rv-d1">
+          <div class="player__slot"><span>P2</span><i>Ready</i></div>
+          <div class="player__glyph" aria-hidden="true">J</div>
+          <h3 class="player__name">Julia</h3>
+          <div class="player__words"><span>AI</span><span>Shaders</span><span>Pixels</span></div>
+          <p class="player__bio">Mobs, AI, tech art and sprites. Once animated 168 frames of a single sheep and would do it again.</p>
+        </article>
+        <article class="player rv rv-d2">
+          <div class="player__slot"><span>P3</span><i>Ready</i></div>
+          <div class="player__glyph" aria-hidden="true">G</div>
+          <h3 class="player__name">Gabi</h3>
+          <div class="player__words"><span>3D</span><span>Design</span><span>Animation</span></div>
+          <p class="player__bio">3D models, UI design and animation. Makes it look like a game instead of a prototype.</p>
+        </article>
       </div>
     </section>
 
     <section class="section" aria-labelledby="toolbox-title">
-      <div class="section-head">
-        <h2 id="toolbox-title" class="h-section">Toolbox</h2>
+      <div class="section-head rv">
+        <div class="section-head__titles">
+          <span class="kicker">03 · Toolbox</span>
+          <h2 id="toolbox-title" class="h-section">What we use</h2>
+        </div>
       </div>
       <div class="grid-auto">
-        <div class="card">
+        <div class="card rv">
           <span class="kicker">Engines</span>
-          <div class="tags"><span class="chip">[Unity]</span><span class="chip">[Unreal Engine]</span><span class="chip">[Godot]</span></div>
+          <div class="tags"><span class="chip">Unity 6</span><span class="chip">Roblox Studio</span><span class="chip">Vanilla web</span></div>
         </div>
-        <div class="card">
+        <div class="card rv rv-d1">
           <span class="kicker">Languages</span>
-          <div class="tags"><span class="chip">[C#]</span><span class="chip">[C++]</span><span class="chip">[GDScript]</span><span class="chip">[HLSL]</span></div>
+          <div class="tags"><span class="chip">C#</span><span class="chip">Luau</span><span class="chip">JavaScript</span><span class="chip">HLSL</span></div>
         </div>
-        <div class="card">
-          <span class="kicker">Focus</span>
-          <div class="tags"><span class="chip">[Gameplay systems]</span><span class="chip">[Game feel]</span><span class="chip">[Editor tools]</span><span class="chip">[Shaders &amp; VFX]</span></div>
+        <div class="card rv rv-d2">
+          <span class="kicker">Art &amp; process</span>
+          <div class="tags"><span class="chip">Pixel art</span><span class="chip">3D models</span><span class="chip">Figma</span><span class="chip">Git &amp; PRs</span></div>
         </div>
       </div>
     </section>
 
-    <section id="contact" class="contact" aria-labelledby="contact-title">
+    <section id="contact" class="contact rv" aria-labelledby="contact-title">
       <div class="contact__main">
-        <span class="kicker">Press start</span>
-        <h2 id="contact-title" class="contact__title">Let’s make something odd.</h2>
-        <a class="contact__email" href="mailto:[EMAIL]">[EMAIL]</a>
+        <span class="kicker kicker--pink">Contact</span>
+        <h2 id="contact-title" class="contact__title">Got a game that needs an odd one out?</h2>
+        <!-- Put the studio e-mail in both places below -->
+        <a class="contact__email" href="mailto:[EMAIL]">[your@email]</a>
       </div>
       <nav class="social" aria-label="Social">
-        <a href="[ITCH_URL]">itch.io ↗</a>
         <a href="https://github.com/OddOneOutGameStudio">GitHub ↗</a>
         <a href="[LINKEDIN_URL]">LinkedIn ↗</a>
-        <a href="[BLUESKY_OR_X_URL]">Bluesky ↗</a>
+        <a href="[ITCH_URL]">itch.io ↗</a>
       </nav>
     </section>
   </main>
 
   <footer class="site-footer">
-    <span>© <span data-year>2026</span> Odd One Out</span>
+    <span>© <span data-year>2026</span> Odd One Out · Warsaw</span>
     <span>Made with too much coffee</span>
   </footer>
 </div>
 
-<script src="assets/js/main.js?v=4" defer></script>
-<script src="assets/js/deck.js?v=4" defer></script>
+<script src="assets/js/main.js?v=5" defer></script>
+<script src="assets/js/deck.js?v=5" defer></script>
 </body>
 </html>

@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pirate Cove — Odd One Out</title>
+  <meta name="description" content="Pirate Cove: a 2D pirate platformer built in six weeks as our first Unity project. Lobby, three levels, a secret one and a save system.">
+  <meta name="theme-color" content="#0a0514">
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Grotesk:wght@400;500;700&family=VT323&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css?v=5">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<div class="wrap">
+  <header class="site-header">
+    <a class="back" href="../index.html#work">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+      Level select
+    </a>
+    <a class="logo" href="../index.html" aria-label="Odd One Out — home">
+      <span class="logo__mark" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span>
+      <span class="logo__word">ODD ONE OUT</span>
+    </a>
+  </header>
+
+  <main id="main">
+    <section class="project-hero">
+      <span class="kicker">Level 02 · First Unity project · 6 weeks</span>
+      <h1><span class="glitch" data-text="Pirate Cove">Pirate Cove</span></h1>
+      <p class="lead">Six weeks, four people, <strong>zero Unity experience on day one</strong>. Pirate Cove is the 2D platformer where we learned the engine, game design and level design the only way that sticks — by shipping a game with a lobby, three levels, a secret one and a save system.</p>
+    </section>
+
+    <dl class="hud">
+      <div><dt>Genre</dt><dd>2D platformer</dd></div>
+      <div><dt>Engine</dt><dd>Unity 2022.3 · C#</dd></div>
+      <div><dt>Team</dt><dd>4 people</dd></div>
+      <div><dt>Timeline</dt><dd>Oct → Nov 2025</dd></div>
+      <div><dt>We did</dt><dd>Levels · gameplay · VFX · extra pixel art</dd></div>
+      <div><dt>Course</dt><dd>PJATK · "6 week"</dd></div>
+    </dl>
+
+    <section class="trailer" aria-label="Gameplay">
+      <div class="crt rv">
+        <div class="media media--16x9">
+          <iframe src="https://drive.google.com/file/d/1_rEm68JNcFbV_10JqV7cG0VjgaGoEsbu/preview" title="Pirate Cove gameplay video"
+                  allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div class="crt__label"><span>Gameplay · <b>Pirate Cove</b></span><span>Google Drive</span></div>
+      </div>
+      <div class="btn-row rv">
+        <a class="btn btn--primary" href="https://github.com/JackKaKi/Pirate-Cove">Source on GitHub ↗</a>
+      </div>
+    </section>
+
+    <section class="section split" aria-labelledby="pitch-title">
+      <h2 id="pitch-title" class="h-sub rv">The pitch</h2>
+      <div class="prose rv rv-d1">
+        <p>A pirate washes up in a cove full of treasure, traps and very rude crabs. You start in a lobby hub with three save slots, buy access to the next level and a potion or two, and go.</p>
+        <p>Each level is a hand-built tilemap with its own hazards: vanishing walls, water you really should not fall into, death zones, super chests. Checkpoints are pirate flags. Enemies walk, shoot or — in the case of Frab the NPC — charge you a tax every time you pass.</p>
+        <p>The whole point of the project was to <strong>learn Unity by finishing something</strong>. Six weeks later we had a playable build, 600 commits and the team that went on to make everything else on this site.</p>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="built-title">
+      <div class="section-head rv">
+        <div class="section-head__titles">
+          <span class="kicker">Systems</span>
+          <h2 id="built-title" class="h-sub">What we built</h2>
+        </div>
+      </div>
+      <div class="grid-auto">
+        <article class="card system rv">
+          <div class="media media--16x10 media--flat media--pixelated"><img src="../assets/img/pirate-14.jpg" alt="The lobby hub in a brick pirate hideout" loading="lazy"></div>
+          <div class="system__body"><span class="kicker">System 01</span><h3>Lobby &amp; save slots</h3><p>A hub with three save slots, save/load, and a shop where coins buy the next level and potions. The first time any of us wrote persistence.</p></div>
+        </article>
+        <article class="card system rv rv-d1">
+          <div class="media media--16x10 media--flat media--pixelated"><img src="../assets/img/pirate-8.jpg" alt="A jungle level with palm trees and spikes" loading="lazy"></div>
+          <div class="system__body"><span class="kicker">System 02</span><h3>Levels &amp; hazards</h3><p>Tutorial, three main levels and a hidden secret level, all on tilemaps. Vanishing walls, water zones, death zones, super chests, keys, skulls and nuggets to find.</p></div>
+        </article>
+        <article class="card system rv rv-d2">
+          <div class="media media--16x10 media--flat media--pixelated"><img src="../assets/img/pirate-2.jpg" alt="Beach level with floating platforms and a pirate flag checkpoint" loading="lazy"></div>
+          <div class="system__body"><span class="kicker">System 03</span><h3>Game feel</h3><p>Dust on run, jump and landing, water splashes, pickup effects, clouds drifting on every level, a checkpoint flag that actually rises. Small things that made it feel like a game.</p></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section split" aria-labelledby="art-title">
+      <h2 id="art-title" class="h-sub rv">Art</h2>
+      <div class="prose rv rv-d1">
+        <p>Base assets are PixelFrog's <a href="https://pixelfrog-assets.itch.io/treasure-hunters">Treasure Hunters</a> pack. Everything it did not have, we drew ourselves: the death-in-water animation, the sword death, the rising checkpoint flag, closed doors for each level, amethysts, vines and the whole Grab character with idle and fall frames.</p>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="gallery-title">
+      <div class="section-head rv"><h2 id="gallery-title" class="h-sub">Gallery</h2></div>
+      <div class="grid-auto grid-auto--lg">
+        <div class="media media--16x9 media--pixelated rv"><video class="clip" src="../assets/video/pirate-loop.mp4" poster="../assets/img/pirate-6.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Pirate Cove gameplay loop"></video></div>
+        <div class="media media--16x9 media--pixelated rv rv-d1"><img src="../assets/img/pirate-6.jpg" alt="Cave level with stone walls and a pirate flag" loading="lazy"></div>
+      </div>
+    </section>
+
+    <section class="section split" aria-labelledby="learned-title">
+      <h2 id="learned-title" class="h-sub rv">What we learned</h2>
+      <ol class="lessons rv rv-d1">
+        <li>Level design is a technical job: pacing, sightlines and flow live in the tilemap, not in a document.</li>
+        <li>Prefabs per level, per door and per chest saved us from repeating the same mistake in four places.</li>
+        <li>Git with four beginners works if every feature has its own branch and someone merges every day.</li>
+      </ol>
+    </section>
+
+    <a class="next rv" href="szczury.html">
+      <span><span class="kicker">Next level · 03</span><span class="next__title">Szczury</span></span>
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+  </main>
+
+  <footer class="site-footer">
+    <span>© <span data-year>2026</span> Odd One Out</span>
+    <a href="../index.html#contact">Contact</a>
+  </footer>
+</div>
+
+<script src="../assets/js/main.js?v=5" defer></script>
+</body>
+</html>

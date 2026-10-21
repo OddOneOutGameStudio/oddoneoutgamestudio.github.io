@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Szczury — Odd One Out</title>
+  <meta name="description" content="Szczury: a 3D tower defense built in Unity 6 around named design patterns. Rats, waves, towers and sound effects recorded by the team.">
+  <meta name="theme-color" content="#0a0514">
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Grotesk:wght@400;500;700&family=VT323&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css?v=5">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<div class="wrap">
+  <header class="site-header">
+    <a class="back" href="../index.html#work">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+      Level select
+    </a>
+    <a class="logo" href="../index.html" aria-label="Odd One Out — home">
+      <span class="logo__mark" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span>
+      <span class="logo__word">ODD ONE OUT</span>
+    </a>
+  </header>
+
+  <main id="main">
+    <section class="project-hero">
+      <span class="kicker">Level 03 · 3D tower defense · Unity 6</span>
+      <h1><span class="glitch" data-text="Szczury">Szczury</span></h1>
+      <p class="lead">Rats. Waves. Towers. Our <strong>first real 3D game</strong>, built in Unity 6 on purpose around named design patterns — and with every sound effect recorded by us.</p>
+    </section>
+
+    <dl class="hud">
+      <div><dt>Genre</dt><dd>3D tower defense</dd></div>
+      <div><dt>Engine</dt><dd>Unity 6 · C#</dd></div>
+      <div><dt>Team</dt><dd>4 people</dd></div>
+      <div><dt>Timeline</dt><dd>May → Jun 2026</dd></div>
+      <div><dt>We did</dt><dd>Systems · audio · 3D · UI</dd></div>
+      <div><dt>Course</dt><dd>PJATK · design patterns</dd></div>
+    </dl>
+
+    <section class="trailer" aria-label="Gameplay">
+      <div class="crt rv">
+        <div class="media media--16x9">
+          <span class="media__badge">Wave 7</span>
+          <video class="clip" src="../assets/video/szczury-loop.mp4" poster="../assets/img/szczury-80.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Szczury gameplay loop"></video>
+        </div>
+        <div class="crt__label"><span>Gameplay · <b>Szczury</b></span><span>Loop · 12 s</span></div>
+      </div>
+      <div class="btn-row rv">
+        <a class="btn btn--primary" href="https://github.com/JackKaKi/szczury-tower-defense">Source on GitHub ↗</a>
+      </div>
+    </section>
+
+    <section class="section split" aria-labelledby="pitch-title">
+      <h2 id="pitch-title" class="h-sub rv">The pitch</h2>
+      <div class="prose rv rv-d1">
+        <p>Classic tower defense loop: place towers along the path, upgrade or sell them, hold the base against waves of rats. Enemy variants (tank, fast, diva), tower variants with their own projectiles (poison, slow), an economy of build / sell / upgrade, win and lose states, a tutorial and music that changes with the state of the game.</p>
+        <p>Two goals were written on the wall before the first commit: <strong>learn 3D in Unity</strong> (assets, camera, Unity 6 behaviour graphs) and <strong>build the code around patterns</strong> instead of around panic. Both held.</p>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="built-title">
+      <div class="section-head rv">
+        <div class="section-head__titles">
+          <span class="kicker">Systems</span>
+          <h2 id="built-title" class="h-sub">What we built</h2>
+        </div>
+        <span class="kicker">106 scripts · 36 PRs</span>
+      </div>
+      <div class="grid-auto">
+        <article class="card rv"><span class="kicker">Creational</span><h3 class="h-sub">Factory · Prototype · Pool</h3><p class="soft">Tower and enemy factories, prototypes for variants, an object pool so a wave of fifty rats does not allocate fifty times.</p></article>
+        <article class="card rv rv-d1"><span class="kicker">Structural</span><h3 class="h-sub">Flyweight · MVP</h3><p class="soft">Shared tower and enemy data in flyweight registries; the whole UI split into ten presenters and thirteen views.</p></article>
+        <article class="card rv rv-d2"><span class="kicker">Behavioural</span><h3 class="h-sub">State · Strategy · Command</h3><p class="soft">Enemy state machines (move, attack, death), targeting strategies (closest, weakest), and build / sell / upgrade as undoable commands wired to the New Input System.</p></article>
+        <article class="card rv"><span class="kicker">Audio</span><h3 class="h-sub">Recorded by us</h3><p class="soft">ScriptableObject audio library, a dynamic music controller that switches tracks per game state, and fifteen sound effects we recorded ourselves over two evenings.</p></article>
+        <article class="card rv rv-d1"><span class="kicker">3D</span><h3 class="h-sub">Models, terrain, particles</h3><p class="soft">Towers, rats, terrain and decorations modelled and animated in-house. First time any of us lit a 3D scene.</p></article>
+        <article class="card rv rv-d2"><span class="kicker">Flow</span><h3 class="h-sub">Tutorial &amp; waves</h3><p class="soft">Step-based tutorial with highlights and conditions, wave configs, time-scale control and additive scenes for menu, game and UI.</p></article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="gallery-title">
+      <div class="section-head rv"><h2 id="gallery-title" class="h-sub">Gallery</h2></div>
+      <div class="grid-auto grid-auto--lg">
+        <div class="media media--16x9 rv"><img src="../assets/img/szczury-10.jpg" alt="Tutorial prompt over the green valley map" loading="lazy"></div>
+        <div class="media media--16x9 rv rv-d1"><img src="../assets/img/szczury-50.jpg" alt="Three towers guarding the winding path" loading="lazy"></div>
+        <div class="media media--16x9 rv rv-d2"><img src="../assets/img/szczury-80.jpg" alt="A line of rats under fire from several towers" loading="lazy"></div>
+        <div class="media media--16x9 rv rv-d3"><img src="../assets/img/szczury-100.jpg" alt="Late wave with upgraded towers around the base" loading="lazy"></div>
+      </div>
+    </section>
+
+    <section class="section split" aria-labelledby="learned-title">
+      <h2 id="learned-title" class="h-sub rv">What we learned</h2>
+      <ol class="lessons rv rv-d1">
+        <li>Patterns are cheap when you choose them before writing code and expensive when you retrofit them. We chose first.</li>
+        <li>MVP for UI meant the designer and the programmer could work on the same panel the same day.</li>
+        <li>Recording your own sound effects takes one evening and makes the game feel ten times more yours.</li>
+      </ol>
+    </section>
+
+    <a class="next rv" href="bananas-era-shift.html">
+      <span><span class="kicker">Next level · 04</span><span class="next__title">Banana's Era Shift</span></span>
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+  </main>
+
+  <footer class="site-footer">
+    <span>© <span data-year>2026</span> Odd One Out</span>
+    <a href="../index.html#contact">Contact</a>
+  </footer>
+</div>
+
+<script src="../assets/js/main.js?v=5" defer></script>
+</body>
+</html>

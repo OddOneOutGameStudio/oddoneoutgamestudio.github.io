@@ -59,13 +59,15 @@ function place(node, e) {
 function renderImage(e, base) {
   const media = e.kind === "video" ? make("video") : make("img");
   if (e.kind === "video") {
-    Object.assign(media, { muted: true, loop: true, playsInline: true, preload: "auto" });
+    // Hidden slides should not download their clips up front; show() plays them on demand.
+    Object.assign(media, { muted: true, loop: true, playsInline: true, preload: "metadata" });
     media.setAttribute("muted", "");
     media.setAttribute("aria-hidden", "true");
     media.disablePictureInPicture = true;
   } else {
     media.alt = e.alt || "";
     media.decoding = "async";
+    media.loading = "lazy";
   }
   media.src = base + e.src;
   media.className = "deck__media";

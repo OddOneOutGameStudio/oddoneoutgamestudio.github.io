@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Banana's Era Shift — Odd One Out</title>
+  <meta name="description" content="Banana's Era Shift: a local co-op platformer across three eras of platformer history, made in 24 hours. 2nd place at PJATK Game Jam v8 'Nostalgia Trip'.">
+  <meta name="theme-color" content="#0a0514">
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Grotesk:wght@400;500;700&family=VT323&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css?v=5">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<div class="wrap">
+  <header class="site-header">
+    <a class="back" href="../index.html#work">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+      Level select
+    </a>
+    <a class="logo" href="../index.html" aria-label="Odd One Out — home">
+      <span class="logo__mark" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span>
+      <span class="logo__word">ODD ONE OUT</span>
+    </a>
+  </header>
+
+  <main id="main">
+    <section class="project-hero">
+      <span class="kicker">Level 04 · Game jam · 2nd place</span>
+      <h1><span class="glitch" data-text="Banana's Era Shift">Banana's Era Shift</span></h1>
+      <p class="lead">24 hours, theme <strong>"Nostalgia Trip"</strong>. A local co-op platformer where two shape-shifters cross three generations of platformer history — and take 2nd place at PJATK Game Jam v8.</p>
+    </section>
+
+    <dl class="hud">
+      <div><dt>Genre</dt><dd>Co-op 2D platformer</dd></div>
+      <div><dt>Engine</dt><dd>Unity 2022.3 · C#</dd></div>
+      <div><dt>Team</dt><dd>4 people + artist</dd></div>
+      <div><dt>Timeline</dt><dd>29–30 Nov 2025 · 24 h</dd></div>
+      <div><dt>We did</dt><dd>Level design · gameplay · UI</dd></div>
+      <div><dt>Result</dt><dd>2nd place</dd></div>
+    </dl>
+
+    <section class="trailer" aria-label="Gameplay">
+      <div class="crt rv">
+        <div class="media media--16x9">
+          <span class="media__badge" style="color: var(--yellow)">Era 1 → 2 → 3</span>
+          <video class="clip" src="../assets/video/bananas-loop.mp4" poster="../assets/img/bananas-85.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Banana's Era Shift gameplay loop across three eras"></video>
+        </div>
+        <div class="crt__label"><span>Gameplay · <b>three eras</b></span><span>Loop · 12 s</span></div>
+      </div>
+      <div class="btn-row rv">
+        <a class="btn btn--primary" href="https://github.com/JackKaKi/Nostalgia-Trip-Game-Jam-2025">Source on GitHub ↗</a>
+      </div>
+    </section>
+
+    <section class="section split" aria-labelledby="pitch-title">
+      <h2 id="pitch-title" class="h-sub rv">The pitch</h2>
+      <div class="prose rv rv-d1">
+        <p>Two players, two shape-shifters. Player one takes the <strong>Sonic form</strong>: small and fast, squeezes through tight gaps. Player two takes the <strong>Kong form</strong>: big and strong, pushes and smashes. The abilities are asymmetric on purpose — no level can be finished solo.</p>
+        <p>Each level is the same world in a different era. Level one is a low-res single-screen arcade cabinet. Level two is 16-bit pixel art with a shared scrolling camera. Level three is modern hand-drawn 2D with a dynamic, rotating split-screen.</p>
+        <p>We had one night, one artist drawing three different styles, and a jam theme that begged for exactly this. 101 commits later there was a build with all three eras — and a podium.</p>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="built-title">
+      <div class="section-head rv">
+        <div class="section-head__titles">
+          <span class="kicker">Under pressure</span>
+          <h2 id="built-title" class="h-sub">What we built in a night</h2>
+        </div>
+      </div>
+      <div class="grid-auto">
+        <article class="card system rv">
+          <div class="media media--16x10 media--flat media--pixelated"><img src="../assets/img/bananas-12.jpg" alt="Era 1: a single-screen arcade level with neon platforms and rolling barrels" loading="lazy"></div>
+          <div class="system__body"><span class="kicker">Era 01</span><h3>Arcade cabinet</h3><p>One static screen, Donkey Kong energy. Rolling barrels, a barrel spawner and retro movement that feels deliberately stiff.</p></div>
+        </article>
+        <article class="card system rv rv-d1">
+          <div class="media media--16x10 media--flat media--pixelated"><img src="../assets/img/bananas-45.jpg" alt="Era 2: 16-bit pixel-art level with a shared scrolling camera" loading="lazy"></div>
+          <div class="system__body"><span class="kicker">Era 02</span><h3>16-bit</h3><p>Shared camera, trampolines, seesaw boosters, falling and moving islands, buttons that open the way for the other player.</p></div>
+        </article>
+        <article class="card system rv rv-d2">
+          <div class="media media--16x10 media--flat"><img src="../assets/img/bananas-85.jpg" alt="Era 3: hand-drawn level with a rotating diagonal split-screen" loading="lazy"></div>
+          <div class="system__body"><span class="kicker">Era 03</span><h3>Modern split-screen</h3><p>Hand-drawn art and a split-screen system that rotates the divider as the players move apart. Built in the last hours, somehow shipped.</p></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section split" aria-labelledby="learned-title">
+      <h2 id="learned-title" class="h-sub rv">What we learned</h2>
+      <ol class="lessons rv rv-d1">
+        <li>Working with an artist under a deadline means agreeing on sizes, palettes and file names in the first hour, not the last.</li>
+        <li>Asymmetric co-op designs itself if you make every obstacle need both players at least once per screen.</li>
+        <li>Commit messages after twenty hours awake are not something you want to see again. We saw them again.</li>
+      </ol>
+    </section>
+
+    <a class="next rv" href="frontend.html">
+      <span><span class="kicker">Next level · 05–06</span><span class="next__title">Browser games</span></span>
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+  </main>
+
+  <footer class="site-footer">
+    <span>© <span data-year>2026</span> Odd One Out</span>
+    <a href="../index.html#contact">Contact</a>
+  </footer>
+</div>
+
+<script src="../assets/js/main.js?v=5" defer></script>
+</body>
+</html>
