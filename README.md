@@ -10,6 +10,7 @@ projects/szczury.html          03 Szczury (3D tower defense, Unity 6)
 projects/bananas-era-shift.html 04 Banana's Era Shift (game jam, 2. miejsce)
 projects/frontend.html         05 DOPAMINE.exe (slot na Stake Engine, Svelte+PIXI) + 06 Halloween Escape Room — media escape roomu do uzupełnienia
 projects/cats.html             07 Idle Cat Farm (Java + Swing, bez silnika) — grywalna z itch.io
+projects/the-dropper.html      08 The Dropper: Brainrot (Roblox) — pętla spadania i galeria ze Studio, link do gry
 assets/css/style.css           cały wygląd (kolory i fonty na górze, w :root); styl arcade: scanlines, glitch, pixelowe rogi
 assets/js/main.js              rok w stopce, pętle wideo w kadrze, reveal przy scrollu, losowe glitche
 assets/js/deck.js              odtwarzacz prezentacji (deck.json)

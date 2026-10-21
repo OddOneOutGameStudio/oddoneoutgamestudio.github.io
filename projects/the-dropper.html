@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Dropper: Brainrot — Odd One Out</title>
+  <meta name="description" content="The Dropper: Brainrot — our Roblox game. Fall through neon shafts themed after brainrot memes, dodge the obstacles and race the daily speedrun. Live on Roblox.">
+  <meta name="theme-color" content="#0a0514">
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Grotesk:wght@400;500;700&family=VT323&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css?v=14">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<div class="wrap">
+  <header class="site-header">
+    <a class="back" href="../index.html#work">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+      Level select
+    </a>
+    <a class="logo" href="../index.html" aria-label="Odd One Out — home">
+      <span class="logo__mark" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span>
+      <span class="logo__word">ODD ONE OUT</span>
+    </a>
+  </header>
+
+  <main id="main">
+    <section class="project-hero">
+      <span class="kicker">Level 08 · Roblox · Obby &amp; platformer</span>
+      <h1><span class="glitch" data-text="The Dropper">The Dropper</span></h1>
+      <p class="lead">Drop. Dodge. Don't die. Fall through <strong>neon shafts themed after brainrot memes</strong>, steer around everything in the way and see how deep you can get. Our Roblox game, live with real players and still getting updates.</p>
+    </section>
+
+    <dl class="hud">
+      <div><dt>Genre</dt><dd>Dropper · obby</dd></div>
+      <div><dt>Engine</dt><dd>Roblox Studio · Luau</dd></div>
+      <div><dt>Published by</dt><dd>Odd One Out Studio</dd></div>
+      <div><dt>Live since</dt><dd>Jul 2026</dd></div>
+      <div><dt>Levels</dt><dd>15 · Easy → Hard</dd></div>
+      <div><dt>Platforms</dt><dd>PC · mobile</dd></div>
+    </dl>
+
+    <section class="trailer" aria-label="Gameplay">
+      <div class="crt rv">
+        <div class="media media--16x9">
+          <span class="media__badge media__badge--rec">Falling</span>
+          <video class="clip" src="../assets/video/dropper-loop.mp4" poster="../assets/img/dropper-ballerina.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Falling through the Ballerina Capuchina and Tralalero Tralala shafts"></video>
+        </div>
+        <div class="crt__label"><span>Now falling · <b>The Dropper</b></span><span>Loop · 6 s</span></div>
+      </div>
+      <div class="btn-row rv">
+        <a class="btn btn--primary" href="https://www.roblox.com/share?code=dc18952209bfd449a08566a2e03e49f7&amp;type=ExperienceDetails&amp;stamp=1792601594040">Play on Roblox ↗</a>
+      </div>
+    </section>
+
+    <section class="section split" aria-labelledby="pitch-title">
+      <h2 id="pitch-title" class="h-sub rv">The pitch</h2>
+      <div class="prose rv rv-d1">
+        <p>A classic Roblox dropper: you jump into a shaft and fall. Steer with WASD or the arrows, dodge the obstacles on the way down and land in the water at the bottom. Every one of the fifteen shafts belongs to a brainrot character (Tung Tung Sahur, Ballerina Capuchina, Tralalero Tralala, Bombardino Crocodilo, Lirili Larila) in an Easy, Medium and Hard version, from a 430-stud drop to more than 1,300 studs of hard mode.</p>
+        <p>Pick a mode on the neon plaza: Casual to just fall, Training to practise one difficulty, or the Daily Speedrun, where everyone gets the same ten random levels for the day and races the clock. Two power-ups save a bad run: the Feather slows the fall right down, the Jetpack blasts you to the bottom.</p>
+        <div class="tags"><span class="tag tag--pink">Live on Roblox</span><span class="tag">Luau</span><span class="tag">Speedrun</span><span class="tag">Leaderboards</span><span class="tag tag--blue">EN · PL</span></div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="built-title">
+      <div class="section-head rv">
+        <div class="section-head__titles">
+          <span class="kicker">Systems</span>
+          <h2 id="built-title" class="h-sub">What we built</h2>
+        </div>
+        <span class="kicker">Client + server · Luau</span>
+      </div>
+      <div class="grid-auto">
+        <article class="card rv"><span class="kicker">Levels</span><h3 class="h-sub">15 shafts, 3 difficulties</h3><p class="soft">Each level is its own themed shaft kept in server storage and loaded into the world when a run starts, so the lobby stays light and a new level is one more model in the catalog.</p></article>
+        <article class="card rv rv-d1"><span class="kicker">Modes</span><h3 class="h-sub">Daily speedrun</h3><p class="soft">The date seeds the pick of ten random levels, so everyone races the same run that day, with timed runs, separate daily, weekly and all-time boards, plus Casual and Training modes.</p></article>
+        <article class="card rv rv-d2"><span class="kicker">Feel</span><h3 class="h-sub">One source of fall physics</h3><p class="soft">Fall speeds for normal falling, the Feather and the Jetpack live in one shared module, read both by the client that makes the fall feel right and by the server's anti-cheat.</p></article>
+        <article class="card rv"><span class="kicker">Server</span><h3 class="h-sub">Anti-cheat &amp; saves</h3><p class="soft">The server flags any run that reaches the water faster than the fastest legal fall, and keeps player data and coins in a DataStore across sessions.</p></article>
+        <article class="card rv rv-d1"><span class="kicker">Meta</span><h3 class="h-sub">Coins, pets &amp; trails</h3><p class="soft">An economy around the runs: coins, a shop with pets that follow you and trails that streak behind your fall, daily rewards and daily quests on pads around the plaza.</p></article>
+        <article class="card rv rv-d2"><span class="kicker">Reach</span><h3 class="h-sub">Mobile &amp; two languages</h3><p class="soft">On-screen buttons for phones and tablets, and the whole interface in English and Polish, difficulty names included.</p></article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="gallery-title">
+      <div class="section-head rv"><h2 id="gallery-title" class="h-sub">Gallery</h2></div>
+      <div class="grid-auto grid-auto--lg">
+        <div class="media media--16x9 rv"><img src="../assets/img/dropper-cover.jpg" alt="The Dropper: Brainrot key art: a player falls down a neon shaft past Tung Tung Sahur" loading="lazy"></div>
+        <div class="media media--16x9 rv rv-d1"><img src="../assets/img/dropper-plaza.jpg" alt="The lobby plaza with the fountain and the Casual, Easy, Medium and Hard level boards" loading="lazy"></div>
+        <div class="media media--16x9 rv rv-d2"><img src="../assets/img/dropper-lobby.jpg" alt="The neon city lobby floating above a purple sky" loading="lazy"></div>
+        <div class="media media--16x9 rv rv-d3"><img src="../assets/img/dropper-tralalero.jpg" alt="Looking down the hexagonal Tralalero Tralala shaft with bubbles and coins" loading="lazy"></div>
+        <div class="media media--16x9 rv"><img src="../assets/img/dropper-ballerina.jpg" alt="Falling through the Ballerina Capuchina shaft past coffee cups and pink balls" loading="lazy"></div>
+        <div class="media media--16x9 rv rv-d1"><img src="../assets/img/dropper-bombardino.jpg" alt="The square Bombardino Crocodilo shaft with red rings on the walls" loading="lazy"></div>
+      </div>
+    </section>
+
+    <a class="next rv" href="dreamwell.html">
+      <span><span class="kicker">Back to level · 01</span><span class="next__title">DreamWell</span></span>
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+  </main>
+
+  <footer class="site-footer">
+    <span>© <span data-year>2026</span> Odd One Out</span>
+    <a href="../index.html#contact">Contact</a>
+  </footer>
+</div>
+
+<script src="../assets/js/main.js?v=14" defer></script>
+</body>
+</html>
