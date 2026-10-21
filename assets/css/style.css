@@ -305,7 +305,7 @@ ul, ol { margin: 0; padding: 0; }
 .grid-auto--lg { grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); gap: 16px; }
 .grid-2 { display: grid; gap: 24px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); }
 
-.split { display: flex; flex-wrap: wrap; gap: 24px 64px; }
+.split { display: flex; flex-direction: row; flex-wrap: wrap; align-items: flex-start; gap: 24px 64px; }
 .split > :first-child { flex: 1 1 240px; }
 .split > :last-child { flex: 999 1 520px; min-width: 0; }
 
