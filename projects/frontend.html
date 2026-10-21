@@ -4,13 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Browser games — Odd One Out</title>
-  <meta name="description" content="Two browser games with no engine behind them: Sloth, a slot machine built for juice, and a Halloween escape room built for puzzle logic.">
+  <meta name="description" content="Two browser games with no Unity behind them: DOPAMINE.exe, an original slot for Stake Engine where the UI corrupts as you win, and a Halloween escape room built for puzzle logic.">
   <meta name="theme-color" content="#0a0514">
   <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Grotesk:wght@400;500;700&family=VT323&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../assets/css/style.css?v=12">
+  <link rel="stylesheet" href="../assets/css/style.css?v=13">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -31,34 +31,41 @@
     <section class="project-hero">
       <span class="kicker">Levels 05–06 · Frontend · Web</span>
       <h1><span class="glitch" data-text="Browser games">Browser games</span></h1>
-      <p class="lead">Two games that run in the browser with <strong>no engine behind them</strong>: a slot machine built for juice, and a Halloween escape room built for puzzle logic. Same toolbox — HTML, CSS, JavaScript — very different problems.</p>
+      <p class="lead">Two games that run in the browser with <strong>no Unity behind them</strong>: an original slot built on a real casino engine, and a Halloween escape room built for puzzle logic. Same toolbox at the bottom — HTML, CSS, JavaScript — very different problems on top.</p>
     </section>
 
     <dl class="hud">
       <div><dt>Platform</dt><dd>Browser</dd></div>
-      <div><dt>Stack</dt><dd>HTML · CSS · JS</dd></div>
-      <div><dt>Engine</dt><dd>None</dd></div>
-      <div><dt>We did</dt><dd>Frontend design · logic · animation</dd></div>
-      <div><dt>Status</dt><dd>Clips incoming</dd></div>
+      <div><dt>Stack</dt><dd>Svelte 5 · PIXI 8 · Python · HTML/CSS/JS</dd></div>
+      <div><dt>Engine</dt><dd>Stake Engine · none</dd></div>
+      <div><dt>We did</dt><dd>Frontend design · math · logic · animation</dd></div>
+      <div><dt>Status</dt><dd>Playable in storybook · WIP</dd></div>
     </dl>
 
-    <section id="sloth" class="section part" aria-labelledby="sloth-title">
+    <section id="dopamine" class="section part" aria-labelledby="dopamine-title">
       <div class="section-head rv" style="border-top: 0; padding-top: 0">
         <div class="section-head__titles">
-          <span class="kicker">Level 05 · Slot game</span>
-          <h2 id="sloth-title" class="h-section"><span class="glitch" data-text="Sloth">Sloth</span></h2>
+          <span class="kicker">Level 05 · Slot game · Stake Engine</span>
+          <h2 id="dopamine-title" class="h-section"><span class="glitch" data-text="DOPAMINE.exe">DOPAMINE.exe</span></h2>
         </div>
-        <span class="kicker">Media coming soon</span>
+        <span class="kicker">Kinga · solo · 2026</span>
+      </div>
+      <div class="crt rv">
+        <div class="media media--16x11">
+          <span class="media__badge media__badge--rec">Rec</span>
+          <video class="clip" src="../assets/video/dopamine-loop.mp4" poster="../assets/img/dopamine-6.jpg" autoplay muted loop playsinline preload="metadata" aria-label="DOPAMINE.exe spinning in the storybook"></video>
+        </div>
+        <div class="crt__label"><span>Storybook run · <b>DOPAMINE.exe</b></span><span>Loop · 16 s</span></div>
       </div>
       <div class="grid-2">
-        <div class="crt rv">
-          <div class="media media--16x9 media--empty" data-label="Sloth · gameplay clip incoming"></div>
-          <div class="crt__label"><span>Gameplay · <b>Sloth</b></span><span>Soon</span></div>
+        <div class="prose rv">
+          <p>An original <strong>5×4, 20-line slot</strong> built for <a href="https://engine.io">Stake Engine</a>, the platform where independent creators publish casino games for Stake. The concept: corrupted software, a dopamine loop, degen internet culture. The <strong>interface degrades as you win</strong> — a DOPAMINE METER climbs from 0 to 100 and the machine goes from calm green to red alarms, glitches and chaos.</p>
+          <p>The scatter is a red button labelled <strong>DO NOT PRESS</strong>. The wild is <strong>WILD.exe</strong>. The bonus is <strong>DOPAMINE OVERLOAD</strong>: free spins with multiplier wilds, ×2 to ×50. A lab goblin watches from a tank next to the reels and goes through five moods from bored to manic. The spin button evolves from STIMULATE to MORE to DO IT.</p>
         </div>
         <div class="prose rv rv-d1">
-          <p>A slot machine for the browser. Spinning reels, paylines, win animations, a payout table and the hundred small timings that make a spin feel satisfying instead of random.</p>
-          <p>The work here is <strong>frontend design</strong>: layout that holds together at any width, reel animation that stays smooth, state that never lets you spin twice at once, and the celebratory juice when the symbols line up.</p>
-          <div class="tags"><span class="tag">Reels</span><span class="tag">Paylines</span><span class="tag">CSS animation</span><span class="tag tag--blue">Game feel</span></div>
+          <p><strong>Two SDKs, learned from zero.</strong> The math lives in the Python Math SDK: symbol strips, paytable, bonus logic, an RTP optimiser (in Rust) tuned to exactly 0.965, a 5000× win cap, and the books of pre-simulated outcomes that the engine actually serves.</p>
+          <p><strong>The frontend is the point.</strong> The Web SDK (Svelte 5 + PIXI 8) ships a generic mining theme; almost all of it was replaced with hand-built HTML overlays: the machine frame with its alarm sequence, the control bar, the bonus panels, the goblin rig with a typewriter speech bubble, and eleven symbols drawn as CSS art and rasterised with headless Chrome. The result runs end to end in the storybook, including a $5,000 win-cap book.</p>
+          <div class="tags"><span class="tag tag--pink">Stake Engine</span><span class="tag">Svelte 5</span><span class="tag">PIXI 8</span><span class="tag">Python math SDK</span><span class="tag">RTP 0.965</span><span class="tag tag--blue">CSS art</span></div>
         </div>
       </div>
     </section>
@@ -96,6 +103,6 @@
   </footer>
 </div>
 
-<script src="../assets/js/main.js?v=12" defer></script>
+<script src="../assets/js/main.js?v=13" defer></script>
 </body>
 </html>

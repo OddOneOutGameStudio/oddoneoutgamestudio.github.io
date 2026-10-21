@@ -250,6 +250,7 @@ ul, ol { margin: 0; padding: 0; }
 .media__start { position: absolute; left: 50%; bottom: 8%; transform: translateX(-50%); z-index: 2; cursor: pointer; white-space: nowrap; }
 @media (max-width: 560px) { .media__start { bottom: 6%; min-height: 40px; padding: 0 14px; font-size: 14px; } }
 .media--4x5 { aspect-ratio: 4 / 5; }
+.media--16x11 { aspect-ratio: 16 / 11; }
 .media--1x1 { aspect-ratio: 1; }
 .media--flat { border: 0; }
 .media > img, .media > video, .media > iframe {

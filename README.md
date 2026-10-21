@@ -8,7 +8,7 @@ projects/dreamwell.html        01 DreamWell (praca inżynierska) — trailer z D
 projects/pirate-cove.html      02 Pirate Cove (6 week) — film z Drive, systemy, galeria
 projects/szczury.html          03 Szczury (3D tower defense, Unity 6)
 projects/bananas-era-shift.html 04 Banana's Era Shift (game jam, 2. miejsce)
-projects/frontend.html         05 Sloth + 06 Halloween Escape Room (web, bez silnika) — media do uzupełnienia
+projects/frontend.html         05 DOPAMINE.exe (slot na Stake Engine, Svelte+PIXI) + 06 Halloween Escape Room — media escape roomu do uzupełnienia
 projects/cats.html             07 Idle Cat Farm (Java + Swing, bez silnika) — grywalna z itch.io
 assets/css/style.css           cały wygląd (kolory i fonty na górze, w :root); styl arcade: scanlines, glitch, pixelowe rogi
 assets/js/main.js              rok w stopce, pętle wideo w kadrze, reveal przy scrollu, losowe glitche
