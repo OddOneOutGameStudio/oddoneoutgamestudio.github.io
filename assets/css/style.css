@@ -597,8 +597,11 @@ ul, ol { margin: 0; padding: 0; }
 }
 .arch { display: flex; flex-direction: column; gap: 14px; }
 .arch__bar { display: flex; flex-direction: column; gap: 10px; }
-.arch__chips, .arch__traces { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
-.arch__bar-label { font-family: var(--font-pixel); font-size: 9px; color: var(--muted); margin-right: 6px; text-transform: uppercase; }
+.arch__chips, .arch__traces { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px; }
+/* Eleven patterns wrap as 6 + 5 instead of 10 + 1 */
+.arch__chips { max-width: 640px; margin-inline: auto; }
+/* The row label sits on its own line above its centred buttons */
+.arch__bar-label { flex-basis: 100%; text-align: center; font-family: var(--font-pixel); font-size: 9px; color: var(--muted); text-transform: uppercase; }
 .arch__chip {
   font-family: var(--font-sans); font-weight: 600; font-size: 13px; line-height: 1; padding: 9px 12px;
   background: var(--surface); border: 1px solid var(--line-strong); color: var(--soft); cursor: pointer;

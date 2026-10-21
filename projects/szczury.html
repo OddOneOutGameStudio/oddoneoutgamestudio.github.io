@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Grotesk:wght@400;500;700&family=VT323&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../assets/css/style.css?v=25">
+  <link rel="stylesheet" href="../assets/css/style.css?v=26">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -31,7 +31,7 @@
     <section class="project-hero">
       <span class="kicker">Level 03 · codename „Szczury” · Unity 6 · 2026</span>
       <h1><span class="glitch" data-text="Tower Defense">Tower Defense</span><span class="project-hero__sub">code architecture</span></h1>
-      <p class="lead">Rats, waves, towers — and a game that is <strong>well structured on purpose</strong>, and ugly on purpose too. The architecture was the product: <strong>106 scripts, 11 named design patterns</strong>, every class with one job, undo and redo for free. The looks got whatever time was left, which was none. The map below is generated from the actual code.</p>
+      <p class="lead">Rats, waves, towers — and a game that is <strong>well structured on purpose</strong> (and ugly on purpose too). The architecture was the product: <strong>106 scripts, 11 named design patterns</strong>. The looks got whatever time was left, which was none. The map below is generated from the actual code.</p>
     </section>
 
     <dl class="hud">
@@ -73,7 +73,7 @@
         <article class="card rv rv-d2"><span class="kicker">Behavioural</span><h3 class="h-sub">State · Strategy · Command · Observer</h3><p class="soft">Enemy state machines (move, attack, death), targeting strategies (closest, weakest), build / sell / upgrade as undoable commands, and events everywhere instead of polling.</p></article>
         <article class="card rv"><span class="kicker">Wiring</span><h3 class="h-sub">Service Locator · Singleton</h3><p class="soft">One bootstrapper builds the factories, registries and pool and registers them; managers are singletons with an explicit lifetime — persistent or per scene.</p></article>
         <article class="card rv rv-d1"><span class="kicker">Audio</span><h3 class="h-sub">Recorded by us</h3><p class="soft">ScriptableObject audio library, a dynamic music controller that switches tracks per game state, and fifteen sound effects we recorded ourselves over two evenings.</p></article>
-        <article class="card rv rv-d2"><span class="kicker">3D</span><h3 class="h-sub">First time in three dimensions</h3><p class="soft">Towers, rats, terrain and decorations modelled and animated in-house; Unity 6 behaviour graphs for the rats. First time any of us lit a 3D scene — it shows, and that was fine.</p></article>
+        <article class="card rv rv-d2"><span class="kicker">3D</span><h3 class="h-sub">First time in three dimensions</h3><p class="soft">Towers, rats, terrain and decorations modelled and animated in-house; Unity 6 behaviour graphs for the rats. <strong>First time any of us lit a 3D scene — it shows, and that was fine.</strong></p></article>
       </div>
     </section>
 
@@ -93,12 +93,6 @@
       </div>
       <div class="prose rv">
         <p>Classic tower defense loop: place towers along the path, upgrade or sell them, hold the base against waves of rats. Enemy variants (tank, fast, diva), tower variants with their own projectiles (poison, slow), an economy of build / sell / upgrade, win and lose states, a tutorial and music that changes with the state of the game. Undo and redo included, because commands made it free.</p>
-      </div>
-      <div class="grid-auto grid-auto--lg">
-        <div class="media media--16x9 rv"><img src="../assets/img/szczury-10.jpg" alt="Tutorial prompt over the green valley map" loading="lazy"></div>
-        <div class="media media--16x9 rv rv-d1"><img src="../assets/img/szczury-50.jpg" alt="Three towers guarding the winding path" loading="lazy"></div>
-        <div class="media media--16x9 rv rv-d2"><img src="../assets/img/szczury-80.jpg" alt="A line of rats under fire from several towers" loading="lazy"></div>
-        <div class="media media--16x9 rv rv-d3"><img src="../assets/img/szczury-100.jpg" alt="Late wave with upgraded towers around the base" loading="lazy"></div>
       </div>
     </section>
 
@@ -124,7 +118,7 @@
   </footer>
 </div>
 
-<script src="../assets/js/main.js?v=25" defer></script>
-<script src="../assets/js/szczury-arch.js?v=25" defer></script>
+<script src="../assets/js/main.js?v=26" defer></script>
+<script src="../assets/js/szczury-arch.js?v=26" defer></script>
 </body>
 </html>
