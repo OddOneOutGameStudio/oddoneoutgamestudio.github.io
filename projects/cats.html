@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Julia's Cats — Odd One Out</title>
-  <meta name="description" content="Julia's Cats: a game written with no engine at all — game loop, rendering and input by hand. Cats included.">
+  <title>Idle Cat Farm — Odd One Out</title>
+  <meta name="description" content="Idle Cat Farm: a cozy farming sim in plain Java and Swing, no engine. Autonomous cats with A* pathfinding work the farm while you plan, sell and upgrade. Playable in the browser.">
   <meta name="theme-color" content="#0a0514">
   <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,32 +29,70 @@
 
   <main id="main">
     <section class="project-hero">
-      <span class="kicker">Level 07 · No engine · Solo</span>
-      <h1><span class="glitch" data-text="Julia's Cats">Julia's Cats</span></h1>
-      <p class="lead">A game with <strong>no engine at all</strong>. Game loop, rendering, input and collisions written by hand by Julia — proof that we can build the machine, not just drive it. Cats included.</p>
+      <span class="kicker">Level 07 · Java · No engine · Solo</span>
+      <h1><span class="glitch" data-text="Idle Cat Farm">Idle Cat Farm</span></h1>
+      <p class="lead">A small, unhurried farming sim where <strong>the cats do the work</strong>. They plant, water, refill the well and take naps when they run out of energy, while you pick the crops, fill orders and turn a wild little island into a farm. Written in plain Java and Swing, with no engine at all.</p>
     </section>
 
     <dl class="hud">
+      <div><dt>Genre</dt><dd>Cozy idle farming sim</dd></div>
+      <div><dt>Tech</dt><dd>Java 17 · Swing</dd></div>
       <div><dt>Engine</dt><dd>None · from scratch</dd></div>
-      <div><dt>Author</dt><dd>Julia</dd></div>
-      <div><dt>Team</dt><dd>Solo</dd></div>
-      <div><dt>We did</dt><dd>Everything</dd></div>
-      <div><dt>Status</dt><dd>Clips incoming</dd></div>
+      <div><dt>Author</dt><dd>Julia · solo</dd></div>
+      <div><dt>Runs in</dt><dd>Browser · CheerpJ</dd></div>
+      <div><dt>Status</dt><dd>Released on itch.io</dd></div>
     </dl>
 
-    <section class="trailer" aria-label="Gameplay">
+    <section class="trailer" aria-label="Play Idle Cat Farm">
       <div class="crt rv">
-        <div class="media media--16x9 media--empty" data-label="Cats · gameplay clip incoming"></div>
-        <div class="crt__label"><span>Gameplay · <b>Cats</b></span><span>Soon</span></div>
+        <div class="media media--3x2 media--pixelated">
+          <span class="media__badge">Playable</span>
+          <img src="../assets/img/idle-cat-farm-cover.png" alt="Idle Cat Farm title over a pixel-art island with trees, a pond and a bridge">
+          <button type="button" class="btn btn--primary media__start" data-embed="https://itch.io/embed-upload/19008997?color=0a0514" data-title="Idle Cat Farm">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15l13-7.5z"/></svg>
+            Play in browser
+          </button>
+        </div>
+        <div class="crt__label"><span>Insert coin · <b>Idle Cat Farm</b></span><span>WASD + mouse</span></div>
+      </div>
+      <p class="muted mono rv">Java runs in the browser through CheerpJ, so the first load takes a moment.</p>
+      <div class="btn-row rv">
+        <a class="btn btn--primary" href="https://y0oles.itch.io/idle-cat-farm">itch.io page ↗</a>
+        <a class="btn" href="https://github.com/juliapazdziorek/Idle-Cat-Farm">Source on GitHub ↗</a>
       </div>
     </section>
 
     <section class="section split" aria-labelledby="pitch-title">
-      <h2 id="pitch-title" class="h-sub rv">Why no engine</h2>
+      <h2 id="pitch-title" class="h-sub rv">The pitch</h2>
       <div class="prose rv rv-d1">
-        <p>Engines hide the hard parts: the frame loop, drawing things in the right order, turning key presses into movement, deciding when two things touch. Writing a game without one means writing all of that yourself.</p>
-        <p>That is the point. After shipping games in Unity and Roblox, building one from the ground up shows what is actually underneath — and that we can rebuild it when an engine gets in the way.</p>
-        <div class="tags"><span class="tag">Game loop</span><span class="tag">Rendering</span><span class="tag">Input</span><span class="tag">Collisions</span><span class="tag tag--pink">Cats</span></div>
+        <p>You don't farm, you run the farm. Pick a crop at a sign and the cats take it from there: they walk to the field, till, plant and water it, carry the watering can back to the well when it's empty and keep the animals' water trays full. Work costs energy, so a tired cat drops what it reserved and goes for a nap before it works again.</p>
+        <p>Your part is the planning. Collect eggs from the coop and milk from the barn, shake the orchard trees yourself (too much fun to delegate), fill customer orders and spend the coins on upgrades. Six areas (park, coop, barn, fields, house and orchard) grow through five stages each, from overgrown wilderness to a farm running at full tilt.</p>
+        <div class="tags"><span class="tag tag--pink">Cats</span><span class="tag">Idle</span><span class="tag">Farming</span><span class="tag">Pixel art</span><span class="tag tag--blue">Java · Swing</span></div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="built-title">
+      <div class="section-head rv">
+        <div class="section-head__titles">
+          <span class="kicker">Systems</span>
+          <h2 id="built-title" class="h-sub">What I built</h2>
+        </div>
+        <span class="kicker">67 classes · 14k lines of Java</span>
+      </div>
+      <div class="grid-auto">
+        <article class="card rv"><span class="kicker">AI</span><h3 class="h-sub">A cat with a to-do list</h3><p class="soft">Every cat runs its own state machine (idle, planting, watering, going to the well, refilling, filling a tray, tired, going to sleep, sleeping) and spends energy on every step of work.</p></article>
+        <article class="card rv rv-d1"><span class="kicker">Pathfinding</span><h3 class="h-sub">A* on the tile grid</h3><p class="soft">Cats find their own way to fields, the well and their beds with a hand-written A* over the farm's tile map.</p></article>
+        <article class="card rv rv-d2"><span class="kicker">Engine-less</span><h3 class="h-sub">Own game loop</h3><p class="soft">A fixed 60 updates per second on its own thread, rendering only after an update and sleeping off the rest of the frame. Camera, input and drawing order are all by hand in Swing.</p></article>
+        <article class="card rv"><span class="kicker">World</span><h3 class="h-sub">Text-file tilemaps</h3><p class="soft">The island is assembled from text-based tilemaps, layer by layer. Each of the 24 upgrades rebuilds the world from its maps, so the farm visibly grows.</p></article>
+        <article class="card rv rv-d1"><span class="kicker">UI</span><h3 class="h-sub">No menus</h3><p class="soft">The interface lives on the farm itself: watering cans over dry fields, a star over an area ready to upgrade, a coin over the workstation.</p></article>
+        <article class="card rv rv-d2"><span class="kicker">Content</span><h3 class="h-sub">20+ crops, orders &amp; animals</h3><p class="soft">Crops unlocked as the farm grows, an orchard with a chance-based shake, eggs and milk varieties, and randomised customer orders to fill.</p></article>
+      </div>
+    </section>
+
+    <section class="section split" aria-labelledby="credits-title">
+      <h2 id="credits-title" class="h-sub rv">Credits</h2>
+      <div class="prose rv rv-d1">
+        <p>Pixel art from the <a href="https://cupnooble.itch.io">Sprout Lands</a> pack by Cup Nooble. Java in the browser thanks to <a href="https://cheerpj.com">CheerpJ</a> by Leaning Technologies. Code, design and every cat's bad decisions: Julia.</p>
       </div>
     </section>
 

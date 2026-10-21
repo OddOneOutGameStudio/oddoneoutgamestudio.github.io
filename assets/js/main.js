@@ -61,6 +61,23 @@ if (reduceMotion || !("IntersectionObserver" in window)) {
 }
 window.__ooo = "rv3";
 
+// Click-to-play: a <button data-embed="url"> inside a .media swaps the cover for the game's iframe,
+// so a heavy browser game only loads when someone asks for it.
+document.querySelectorAll("[data-embed]").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const media = btn.closest(".media");
+    const frame = document.createElement("iframe");
+    frame.src = btn.dataset.embed;
+    frame.title = btn.dataset.title || "Game";
+    frame.allow = "autoplay; fullscreen; gamepad; cross-origin-isolated";
+    frame.allowFullscreen = true;
+    media.querySelectorAll("img, .media__badge").forEach((el) => el.remove());
+    media.append(frame);
+    btn.remove();
+    frame.focus();
+  });
+});
+
 // Glitch bursts: every few seconds one visible .glitch element flickers (RGB split),
 // and any .glitch flickers on hover. Elements must carry data-text with their own text.
 const glitches = Array.from(document.querySelectorAll(".glitch"));
