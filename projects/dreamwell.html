@@ -72,7 +72,7 @@
     <section class="section" aria-labelledby="worlds-title">
       <div class="section-head rv">
         <div class="section-head__titles">
-          <span class="kicker">Three worlds · two art styles</span>
+          <span class="kicker">Three worlds · three looks</span>
           <h2 id="worlds-title" class="h-sub">Where you play</h2>
         </div>
       </div>
@@ -82,7 +82,7 @@
           <div class="system__body">
             <span class="kicker">World 01</span>
             <h3>The Bunker</h3>
-            <p>Your hub in "realistic" pixel art. Power and oxygen generators, a workstation, storage, the 3D converter and a computer with its own apps for managing the bunker and your collection.</p>
+            <p>Your hub, built from 3D models rendered down to PNG sprites. Power and oxygen generators, a workstation, storage, the 3D converter and a computer with its own apps for managing the bunker and your collection.</p>
           </div>
         </article>
         <article class="card system rv rv-d1">
@@ -90,7 +90,7 @@
           <div class="system__body">
             <span class="kicker">World 02</span>
             <h3>ShimmerWoods</h3>
-            <p>A pastel fantasy game-inside-the-game. Gather, farm, fish, cook, craft, trade with a wandering merchant and follow quests from Astrea and Elion. Hedgehogs and sheep run on behaviour graphs.</p>
+            <p>A pastel pixel-art game-inside-the-game. Gather, farm, fish, cook, craft and follow Astrea’s quests. Hedgehogs and sheep run on behaviour graphs.</p>
           </div>
         </article>
         <article class="card system rv rv-d2">
@@ -98,7 +98,7 @@
           <div class="system__body">
             <span class="kicker">World 03</span>
             <h3>BlackNode</h3>
-            <p>Cyber-glitch dungeon with a procedurally sequenced chain of rooms: safe, enemy, resource, treasure, boss. Combo melee, ranged, dash and difficulty that climbs with you.</p>
+            <p>Cyber-glitch dungeon with a procedurally sequenced chain of rooms: safe, enemy, resource, treasure, boss. Combo melee, ranged, dash, difficulty that climbs with you — and Elion, the only one who talks down here.</p>
           </div>
         </article>
       </div>
@@ -113,12 +113,12 @@
         <span class="kicker">~600 commits · 4 people</span>
       </div>
       <div class="grid-auto">
-        <article class="card rv"><span class="kicker">Inventory</span><h3 class="h-sub">Hotbar, backpack, storage</h3><p class="soft">Drag &amp; drop, stacking, splitting, auto-stack across containers, Minecraft-style pickup and place, drop-to-world. One inventory shared across three worlds.</p></article>
+        <article class="card rv"><span class="kicker">Inventory</span><h3 class="h-sub">Hotbar, backpack, storage</h3><p class="soft">Drag &amp; drop, stacking, splitting, auto-stack across containers, click-to-pick-up and place, drop-to-world. Two separate inventories — the bunker’s and the in-game one for ShimmerWoods and BlackNode — with their own item sets: pixel-art items inside the games, clean renders in the bunker. Each world has its own HUD.</p></article>
         <article class="card rv rv-d1"><span class="kicker">Crafting</span><h3 class="h-sub">Tiers &amp; workstations</h3><p class="soft">Recipes with tier gating, a crafting table in the woods and a workstation in the bunker, cooking at the campfire, upgradable bunker structures.</p></article>
         <article class="card rv rv-d2"><span class="kicker">Survival</span><h3 class="h-sub">Stats that never stop</h3><p class="soft">Hunger, health, oxygen and power tick everywhere; each world adds its own pool (Spirit, Hearts). Death costs part of your inventory and sends you home.</p></article>
         <article class="card rv"><span class="kicker">Architecture</span><h3 class="h-sub">Services &amp; events</h3><p class="soft">Plain C# services behind a service locator, a typed event bus, scene catalog and a game-flow pipeline. Refactored mid-project without losing the game.</p></article>
         <article class="card rv rv-d1"><span class="kicker">Persistence</span><h3 class="h-sub">Save system</h3><p class="soft">Autosave, migrations, per-world state snapshots, round-trip tests. Quests, dialogues, collection and crafting progress all survive a reload.</p></article>
-        <article class="card rv rv-d2"><span class="kicker">Art</span><h3 class="h-sub">Pixel art &amp; 3D</h3><p class="soft">Two hand-made pixel-art styles, UI designed in Figma, shaders and outlines, plus 3D models for the bunker machines — every asset drawn or modelled by the team.</p></article>
+        <article class="card rv rv-d2"><span class="kicker">Art</span><h3 class="h-sub">Pixel art &amp; 3D</h3><p class="soft">Pixel art for the two game worlds, 3D models rendered to sprites for the bunker, UI designed in Figma, shaders and outlines — every asset drawn or modelled by the team.</p></article>
       </div>
     </section>
 
@@ -139,12 +139,17 @@
         <div><b>Kinga</b><span>All HUDs across three worlds, inventory and hotbar, structures and upgrades, trade, minimap, the bunker computer, dialogue and quest UI, death and warning screens; led the architecture refactor (services, events, UI MVP).</span></div>
         <div><b>Jula</b><span>Mobs and AI (pathfinding, behaviour graphs), tech art (shaders, lighting, outlines), level design of ShimmerWoods and BlackNode, sprites and animations, save system cleanup.</span></div>
         <div><b>Gabi</b><span>UI design in Figma and UI sprites, bunker level design, save system, interaction system and the bunker machines.</span></div>
-        <div><b>Jakub Jodłowski</b><span>Combat (i-frames, dash, combos, ranged), fishing minigame, BlackNode room generation and difficulty, audio core, stats and the quest/dialogue backend.</span></div>
       </div>
     </section>
 
     <section class="section" aria-labelledby="gallery-title">
       <div class="section-head rv"><h2 id="gallery-title" class="h-sub">Gallery</h2></div>
+      <div class="grid-auto grid-auto--sm">
+        <figure class="sprite rv"><div class="media media--1x1 media--sprite media--pixelated"><img src="../assets/img/dreamwell-player-sw.gif" alt="ShimmerWoods player sprite, idle animation" loading="lazy"></div><figcaption>Player · ShimmerWoods</figcaption></figure>
+        <figure class="sprite rv rv-d1"><div class="media media--1x1 media--sprite media--pixelated"><img src="../assets/img/dreamwell-sheep.gif" alt="Sheep sprite, walking animation" loading="lazy"></div><figcaption>Sheep · 168 frames of a single sheep</figcaption></figure>
+        <figure class="sprite rv rv-d2"><div class="media media--1x1 media--sprite"><img src="../assets/img/dreamwell-player-bunker.webp" alt="Bunker player, rendered from the 3D model" loading="lazy"></div><figcaption>Player · bunker, 3D model rendered to sprites</figcaption></figure>
+        <figure class="sprite rv rv-d3"><div class="media media--1x1 media--sprite media--pixelated"><img src="../assets/img/dreamwell-enemy-bn.gif" alt="BlackNode creature sprite with glowing green eyes" loading="lazy"></div><figcaption>Creature · BlackNode</figcaption></figure>
+      </div>
       <div class="grid-auto grid-auto--lg">
         <div class="media media--16x9 rv"><img src="../assets/img/dreamwell-15.jpg" alt="Crafting table UI in ShimmerWoods" loading="lazy"></div>
         <div class="media media--16x9 rv rv-d1"><img src="../assets/img/dreamwell-30.jpg" alt="Glitch transition between worlds" loading="lazy"></div>
@@ -157,7 +162,7 @@
       <h2 id="learned-title" class="h-sub rv">What we learned</h2>
       <ol class="lessons rv rv-d1">
         <li>Singletons are fast on day one and expensive on day two hundred. Moving to services and a typed event bus halfway through was painful and worth it.</li>
-        <li>Two art styles in one game only work if the rules for UI are written down. We ended up with an actual UI rulebook.</li>
+        <li>Three looks in one game only work if the rules for UI are written down. We ended up with an actual UI rulebook.</li>
         <li>Four people on one Unity project survive on small branches, one PR per fix and a smoke test before every merge.</li>
       </ol>
     </section>

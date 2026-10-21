@@ -261,6 +261,10 @@ ul, ol { margin: 0; padding: 0; }
 }
 .media--pixelated > img, .media--pixelated > video { image-rendering: pixelated; }
 .media--contain > img, .media--contain > video { object-fit: contain; background: #000; }
+.media--sprite { background: var(--surface-2); }
+.media--sprite > img { object-fit: contain; padding: 12%; }
+.sprite { margin: 0; display: flex; flex-direction: column; gap: 10px; }
+.sprite figcaption { font-family: var(--font-mono); font-size: 18px; line-height: 1.2; color: var(--muted); }
 
 /* Empty slot until real media arrives */
 .media--empty { background:
